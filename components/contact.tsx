@@ -39,12 +39,12 @@ export function Contact(): React.ReactElement {
           />
           <RevealGroup className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
             <Reveal as="blockquote" className="lg:col-span-8">
-              <p className="max-w-[22ch] text-[clamp(1.5rem,2.6vw,2.125rem)] leading-[1.25] tracking-[-0.02em] text-ink">
-                I&apos;m a developer who cares about both the{" "}
-                <span className="text-ink">system</span> and the{" "}
-                <span className="text-ink">surface</span>: shipping scalable
-                products fast with Claude Code AI agents woven into every
-                stage of development.
+              <p className="max-w-[26ch] text-[clamp(1.5rem,2.6vw,2.125rem)] leading-[1.25] tracking-[-0.02em] text-ink">
+                I&apos;m passionate about building scalable enterprise
+                applications that solve real business problems. From
+                designing backend architecture and APIs to crafting intuitive
+                user interfaces, I enjoy delivering complete products that are
+                reliable, maintainable, and ready for production.
               </p>
             </Reveal>
 
@@ -88,15 +88,16 @@ export function Contact(): React.ReactElement {
                 id="contact-h"
                 className="mt-6 max-w-[18ch] text-[clamp(1.5rem,2.6vw,2.125rem)] leading-[1.25] tracking-[-0.02em] lg:ml-auto"
               >
-                Have an AI product, SaaS idea, or workflow worth building?
+                Need a scalable web application, ERP platform, internal tool,
+                or enterprise SaaS product?
               </Reveal>
               <Reveal
                 as="p"
                 className="mt-5 max-w-[48ch] text-base text-body lg:ml-auto"
               >
-                Send a short brief. I&apos;ll help turn it into a focused,
-                shippable product, usually within a couple of days, sometimes
-                the same one.
+                Let&apos;s build software that delivers real business impact —
+                specializing in scalable full-stack web applications,
+                enterprise software, and modern product engineering.
               </Reveal>
 
               <Reveal className="mt-9 inline-flex flex-wrap gap-3 lg:justify-end">

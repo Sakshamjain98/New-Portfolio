@@ -15,7 +15,7 @@ import { LiveLocator } from "@/components/widgets/live-locator"
 import { cn } from "@/lib/utils"
 import type { GeoLocation } from "@/lib/location"
 import type { Weather } from "@/lib/weather"
-import { TokenUsage as HeroWidget } from "@/components/widgets/token-usage"
+import { ProfileStats as HeroWidget } from "@/components/widgets/profile-stats"
 
 // Day vs. night background media. The day clip is the bright blue-sky scene;
 // the night clip is the warm golden-hour scene. Posters are the first frame of
@@ -183,16 +183,16 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 {...reveal(0.2)}
                 className="caption-uppercase text-overlay-cream/70"
               >
-                Full-stack Web Developer · 2+ yrs experience
+                Associate Software Engineer · Full-Stack Developer · 2+ Years
               </motion.p>
 
               <motion.h1
                 {...reveal(0.28)}
                 className="mt-5 text-[clamp(2.25rem,4.8vw,4.25rem)] leading-[1.04] tracking-[-0.03em]"
               >
-                Modern software,
+                Scalable software,
                 <br />
-                built to think,
+                engineered for performance,
                 <br />
                 shipped end&#8209;to&#8209;end.
               </motion.h1>
@@ -201,9 +201,12 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 {...reveal(0.38)}
                 className="mt-6 max-w-[560px] text-[15px] leading-[1.6] text-overlay-cream/80 sm:text-base"
               >
-                I&apos;m Saksham Jain, a full-stack web developer with 2+ years
-                of experience building and delivering scalable products fast,
-                using Claude Code AI agents throughout development.
+                I&apos;m Saksham Jain, an Associate Software Engineer
+                specializing in modern full-stack applications, enterprise
+                SaaS platforms, warehouse management systems, and AI-powered
+                workflow automation. I design, build, and deploy
+                production-ready software with a strong focus on scalability,
+                performance, and developer experience.
               </motion.p>
 
               <motion.div
@@ -270,7 +273,7 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-75" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-success" />
               </span>
-              Available for new work · Q3 2026
+              Available for full-time opportunities
             </motion.p>
 
             {/* Locator follows the availability pill: stacked beneath it on

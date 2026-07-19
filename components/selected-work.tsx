@@ -447,8 +447,8 @@ export function SelectedWork(): React.ReactElement {
           id="work-h"
           className="mt-10 max-w-[20ch] text-[clamp(2rem,4.4vw,2.75rem)] tracking-[-0.025em]"
         >
-          A focused set of recent AI products and systems, each shipped to real
-          users.
+          A focused set of enterprise products and systems, each shipped to
+          real users.
         </h2>
       </SectionShell>
 

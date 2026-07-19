@@ -1,0 +1,479 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - link "Saksham Jain, home" [ref=f2e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f2e5]: Saksham Jain
+      - navigation "Primary" [ref=f2e7]:
+        - link "Work" [ref=f2e8] [cursor=pointer]:
+          - /url: "#work"
+        - link "Capabilities" [ref=f2e9] [cursor=pointer]:
+          - /url: "#capabilities"
+        - link "Approach" [ref=f2e10] [cursor=pointer]:
+          - /url: "#process"
+        - link "Stack" [ref=f2e11] [cursor=pointer]:
+          - /url: "#stack"
+        - link "About" [ref=f2e12] [cursor=pointer]:
+          - /url: "#about"
+      - link "Let's talk" [ref=f2e14] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=f2e17]:
+    - region "Introduction" [ref=f2e18]:
+      - generic [ref=f2e24]:
+        - generic [ref=f2e28]:
+          - paragraph [ref=f2e29]: Associate Software Engineer · Full-Stack Developer · 2+ Years
+          - heading "Scalable software, engineered for performance, shipped end‑to‑end." [level=1] [ref=f2e30]: Scalable software,engineered for performance,shipped end‑to‑end.
+          - paragraph [ref=f2e31]: I'm Saksham Jain, an Associate Software Engineer specializing in modern full-stack applications, enterprise SaaS platforms, warehouse management systems, and AI-powered workflow automation. I design, build, and deploy production-ready software with a strong focus on scalability, performance, and developer experience.
+          - generic [ref=f2e32]:
+            - link "View selected work" [ref=f2e33] [cursor=pointer]:
+              - /url: "#work"
+            - link "Get in touch" [ref=f2e34] [cursor=pointer]:
+              - /url: "#contact"
+        - 'switch "Background lighting: day. Switch to night." [checked] [ref=f2e37] [cursor=pointer]'
+        - complementary "Career snapshot" [ref=f2e46]:
+          - generic [ref=f2e47]:
+            - button "Hide career snapshot" [ref=f2e48] [cursor=pointer]:
+              - generic [ref=f2e51]: Snapshot
+            - button "Hide career snapshot" [ref=f2e52] [cursor=pointer]
+          - generic [ref=f2e55]:
+            - generic [ref=f2e56]:
+              - paragraph [ref=f2e57]: 2+
+              - paragraph [ref=f2e58]: Years experience
+            - generic [ref=f2e59]:
+              - paragraph [ref=f2e60]: 4+
+              - paragraph [ref=f2e61]: Production products
+            - generic [ref=f2e62]:
+              - paragraph [ref=f2e63]: 200K+
+              - paragraph [ref=f2e64]: Users served
+            - generic [ref=f2e65]:
+              - paragraph [ref=f2e66]: 4,000+
+              - paragraph [ref=f2e67]: Orders processed daily
+            - generic [ref=f2e68]:
+              - paragraph [ref=f2e69]: "8.7"
+              - paragraph [ref=f2e70]: CGPA · B.Tech CSE
+          - paragraph [ref=f2e72]: Associate Software Engineer
+        - generic [ref=f2e74]:
+          - paragraph [ref=f2e75]: Available for full-time opportunities
+          - generic [ref=f2e79]:
+            - generic [ref=f2e80]: Scroll
+            - generic [ref=f2e85]:
+              - generic [ref=f2e86]: bangalore, in
+              - generic [ref=f2e87]: ·
+              - generic "Overcast, 83°F" [ref=f2e88]: 83°F
+    - region "Practice areas" [ref=f2e92]:
+      - list [ref=f2e94]:
+        - listitem [ref=f2e95]:
+          - generic [ref=f2e96]: "01"
+          - generic [ref=f2e97]: Enterprise SaaS
+        - listitem [ref=f2e98]:
+          - generic [ref=f2e99]: "02"
+          - generic [ref=f2e100]: Full-stack applications
+        - listitem [ref=f2e101]:
+          - generic [ref=f2e102]: "03"
+          - generic [ref=f2e103]: ERP & workflow systems
+        - listitem [ref=f2e104]:
+          - generic [ref=f2e105]: "04"
+          - generic [ref=f2e106]: Modern product UI
+        - listitem [ref=f2e107]:
+          - generic [ref=f2e108]: "05"
+          - generic [ref=f2e109]: Backend architecture
+    - region [ref=f2e110]:
+      - generic [ref=f2e111]:
+        - generic [ref=f2e112]:
+          - generic [ref=f2e113]:
+            - generic [ref=f2e114]: "01"
+            - generic [ref=f2e115]: Selected work
+          - generic [ref=f2e116]: 2024–2025
+        - heading "A focused set of recent AI products and systems, each shipped to real users." [level=2] [ref=f2e117]
+      - generic [ref=f2e120]:
+        - navigation "Project list" [ref=f2e121]:
+          - list [ref=f2e122]:
+            - listitem [ref=f2e123]:
+              - button "01 Pharmansh WMS" [ref=f2e124] [cursor=pointer]:
+                - generic [ref=f2e125]: "01"
+                - generic [ref=f2e130]: Pharmansh WMS
+            - listitem [ref=f2e131]:
+              - button "02 ERP System" [ref=f2e132] [cursor=pointer]:
+                - generic [ref=f2e133]: "02"
+                - generic [ref=f2e134]: ERP System
+            - listitem [ref=f2e135]:
+              - button "03 Attendance Management System" [ref=f2e136] [cursor=pointer]:
+                - generic [ref=f2e137]: "03"
+                - generic [ref=f2e138]: Attendance Management System
+            - listitem [ref=f2e139]:
+              - button "04 Finance & Business Automation" [ref=f2e140] [cursor=pointer]:
+                - generic [ref=f2e141]: "04"
+                - generic [ref=f2e142]: Finance & Business Automation
+            - listitem [ref=f2e143]:
+              - button "05 Portfolio / Internal Tools" [ref=f2e144] [cursor=pointer]:
+                - generic [ref=f2e145]: "05"
+                - generic [ref=f2e146]: Portfolio / Internal Tools
+          - generic [ref=f2e147]:
+            - button "Previous project" [ref=f2e148] [cursor=pointer]
+            - button "Next project" [ref=f2e151] [cursor=pointer]
+        - generic [ref=f2e154]:
+          - generic [ref=f2e157]:
+            - img "Pharmansh warehouse management system dashboard showing inventory levels, order processing, and stock adjustment workflows." [ref=f2e159]
+            - generic [ref=f2e160]:
+              - generic [ref=f2e161]:
+                - generic [ref=f2e162]: / 01
+                - generic [ref=f2e163]: "2025"
+              - heading "Pharmansh WMS" [level=3] [ref=f2e164]
+              - paragraph [ref=f2e165]: Enterprise warehouse management system for pharmaceutical inventory, order processing, purchase workflows, GRN, replenishment, stock adjustment, and role-based operations handling 4,000+ orders per day.
+              - generic [ref=f2e166]:
+                - generic [ref=f2e167]: Warehouse Management
+                - generic [ref=f2e168]: Healthcare
+                - generic [ref=f2e169]: RBAC
+                - generic [ref=f2e170]: Inventory
+                - generic [ref=f2e171]: Cosmos DB
+              - generic [ref=f2e172]:
+                - link "View case study" [ref=f2e173] [cursor=pointer]:
+                  - /url: "#"
+                - generic [ref=f2e176]: Production
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: / 02
+                    - generic: "2024"
+                  - heading [level=3]: ERP System
+                  - paragraph: ERP platform managing 1,700+ institutions and over 200,000 students, with modules for registration, examinations, inspections, finance, and reporting.
+                  - generic:
+                    - generic: ERP
+                    - generic: Education
+                    - generic: Automation
+                    - generic: Firebase
+                    - generic: Dashboard
+                  - generic:
+                    - link:
+                      - /url: "#"
+                      - text: View case study
+                    - generic: Production
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: / 03
+                    - generic: "2024"
+                  - heading [level=3]: Attendance Management System
+                  - paragraph: Employee attendance platform with automated timesheets, leave workflows, presence tracking, and reporting dashboards.
+                  - generic:
+                    - generic: HRMS
+                    - generic: Attendance
+                    - generic: Automation
+                    - generic: Analytics
+                  - generic:
+                    - link:
+                      - /url: "#"
+                      - text: View case study
+                    - generic: Production
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: / 04
+                    - generic: "2024"
+                  - heading [level=3]: Finance & Business Automation
+                  - paragraph: AI-assisted finance and workflow management systems streamlining business operations and decision-making across startups.
+                  - generic:
+                    - generic: Finance
+                    - generic: Automation
+                    - generic: AI
+                    - generic: Analytics
+                  - generic:
+                    - link:
+                      - /url: "#"
+                      - text: View case study
+                    - generic: Production
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: / 05
+                    - generic: "2023"
+                  - heading [level=3]: Portfolio / Internal Tools
+                  - paragraph: Internal tooling covering employee status tracking, registration flows, permissions systems, role-based access, and API architecture.
+                  - generic:
+                    - generic: Employee Status
+                    - generic: Registration Flow
+                    - generic: Permissions
+                    - generic: RBAC
+                    - generic: API Architecture
+                  - generic:
+                    - link:
+                      - /url: "#"
+                      - text: View case study
+                    - generic: Internal
+        - generic [ref=f2e178]:
+          - generic [ref=f2e180]: "2025"
+          - generic [ref=f2e183]: "2024"
+          - generic [ref=f2e186]: "2024"
+          - generic [ref=f2e189]: "2024"
+          - generic [ref=f2e192]: "2023"
+    - region [ref=f2e195]:
+      - generic [ref=f2e196]:
+        - generic [ref=f2e197]:
+          - generic [ref=f2e198]:
+            - generic [ref=f2e199]:
+              - generic [ref=f2e200]: "02"
+              - generic [ref=f2e201]: Capabilities
+            - generic [ref=f2e202]: What I do
+          - heading "Three practices that compound engineering, AI systems, and interface design." [level=2] [ref=f2e203]
+        - generic [ref=f2e204]:
+          - generic [ref=f2e206]:
+            - generic [ref=f2e207]: — 01
+            - heading "Product engineering" [level=3] [ref=f2e214]
+            - paragraph [ref=f2e215]: Production-ready SaaS applications built with scalable architectures, secure APIs, and modern frontend systems optimized for real-world usage.
+            - list [ref=f2e216]:
+              - listitem [ref=f2e217]: Next.js
+              - listitem [ref=f2e218]: React
+              - listitem [ref=f2e219]: Node.js
+              - listitem [ref=f2e220]: Express
+              - listitem [ref=f2e221]: MongoDB
+              - listitem [ref=f2e222]: Cosmos DB
+          - generic [ref=f2e224]:
+            - generic [ref=f2e225]: — 02
+            - heading "Enterprise systems" [level=3] [ref=f2e233]
+            - paragraph [ref=f2e234]: ERP, warehouse management, attendance, HRMS, and workflow automation platforms designed for operational efficiency and long-term scalability.
+            - list [ref=f2e235]:
+              - listitem [ref=f2e236]: Role Based Access
+              - listitem [ref=f2e237]: Workflow Engine
+              - listitem [ref=f2e238]: REST APIs
+              - listitem [ref=f2e239]: Automation
+              - listitem [ref=f2e240]: Reporting
+              - listitem [ref=f2e241]: Permissions
+          - generic [ref=f2e243]:
+            - generic [ref=f2e244]: — 03
+            - heading "Modern UI engineering" [level=3] [ref=f2e251]
+            - paragraph [ref=f2e252]: Responsive, accessible, and maintainable interfaces built with modern component systems and scalable frontend architecture.
+            - list [ref=f2e253]:
+              - listitem [ref=f2e254]: Tailwind
+              - listitem [ref=f2e255]: Shadcn
+              - listitem [ref=f2e256]: Radix
+              - listitem [ref=f2e257]: TypeScript
+              - listitem [ref=f2e258]: Figma
+              - listitem [ref=f2e259]: Responsive Design
+    - region [ref=f2e260]:
+      - generic [ref=f2e261]:
+        - generic [ref=f2e262]:
+          - generic [ref=f2e263]:
+            - generic [ref=f2e264]:
+              - generic [ref=f2e265]: "03"
+              - generic [ref=f2e266]: Approach
+            - generic [ref=f2e267]: How I work
+          - heading "Four moves, in order. Most of the work is removing things before adding them." [level=2] [ref=f2e268]
+        - list [ref=f2e269]:
+          - listitem [ref=f2e270]:
+            - generic [ref=f2e272]: — Step 01
+            - heading "Understand requirements" [level=3] [ref=f2e273]
+            - paragraph [ref=f2e274]: Business requirements, workflows, edge cases, and user journeys — before any UI or schema gets touched.
+          - listitem [ref=f2e275]:
+            - generic [ref=f2e277]: — Step 02
+            - heading "Architect the solution" [level=3] [ref=f2e278]
+            - paragraph [ref=f2e279]: Database design, APIs, permissions, scalability, and deployment planning, mapped out before a line of production code.
+          - listitem [ref=f2e280]:
+            - generic [ref=f2e282]: — Step 03
+            - heading "Build production systems" [level=3] [ref=f2e283]
+            - paragraph [ref=f2e284]: Type-safe APIs, reusable frontend, optimized backend, and testing — built for real load, not a demo.
+          - listitem [ref=f2e285]:
+            - generic [ref=f2e287]: — Step 04
+            - heading "Optimize & ship" [level=3] [ref=f2e288]
+            - paragraph [ref=f2e289]: Performance tuning, monitoring, documentation, deployment, and maintenance until it's genuinely production-ready.
+    - region [ref=f2e290]:
+      - generic [ref=f2e291]:
+        - generic [ref=f2e292]:
+          - generic [ref=f2e293]:
+            - generic [ref=f2e294]:
+              - generic [ref=f2e295]: "04"
+              - generic [ref=f2e296]: Stack
+            - generic [ref=f2e297]: Tools / 2026
+          - heading "A small, durable toolchain I trust to take an idea all the way to production." [level=2] [ref=f2e298]
+        - generic [ref=f2e299]:
+          - generic [ref=f2e300]:
+            - heading "A boring stack, on purpose." [level=3] [ref=f2e301]
+            - paragraph [ref=f2e302]: Stable defaults, opinionated where it matters, and replaceable where it doesn't. The result is a product that ships faster the second time and the tenth time.
+          - generic [ref=f2e304]:
+            - generic [ref=f2e305]:
+              - generic [ref=f2e310]: ~/sakshamjain / stack.config.ts
+              - generic [ref=f2e311]: editing
+            - generic [ref=f2e313]:
+              - generic [ref=f2e314]:
+                - generic [ref=f2e315]: Frontend
+                - list [ref=f2e316]:
+                  - listitem [ref=f2e317]:
+                    - generic [ref=f2e318]: Next.js
+                    - generic [ref=f2e319]: framework
+                  - listitem [ref=f2e320]:
+                    - generic [ref=f2e321]: React
+                    - generic [ref=f2e322]: ui
+                  - listitem [ref=f2e323]:
+                    - generic [ref=f2e324]: TypeScript
+                    - generic [ref=f2e325]: language
+                  - listitem [ref=f2e326]:
+                    - generic [ref=f2e327]: Tailwind CSS
+                    - generic [ref=f2e328]: styling
+                  - listitem [ref=f2e329]:
+                    - generic [ref=f2e330]: Shadcn UI
+                    - generic [ref=f2e331]: primitives
+                  - listitem [ref=f2e332]:
+                    - generic [ref=f2e333]: Radix UI
+                    - generic [ref=f2e334]: primitives
+              - generic [ref=f2e335]:
+                - generic [ref=f2e336]: Backend
+                - list [ref=f2e337]:
+                  - listitem [ref=f2e338]:
+                    - generic [ref=f2e339]: Node.js
+                    - generic [ref=f2e340]: runtime
+                  - listitem [ref=f2e341]:
+                    - generic [ref=f2e342]: Express.js
+                    - generic [ref=f2e343]: framework
+                  - listitem [ref=f2e344]:
+                    - generic [ref=f2e345]: MongoDB
+                    - generic [ref=f2e346]: database
+                  - listitem [ref=f2e347]:
+                    - generic [ref=f2e348]: Azure Cosmos DB
+                    - generic [ref=f2e349]: database
+                  - listitem [ref=f2e350]:
+                    - generic [ref=f2e351]: Firebase
+                    - generic [ref=f2e352]: backend
+                  - listitem [ref=f2e353]:
+                    - generic [ref=f2e354]: Prisma
+                    - generic [ref=f2e355]: orm
+              - generic [ref=f2e356]:
+                - generic [ref=f2e357]: Dev tools
+                - list [ref=f2e358]:
+                  - listitem [ref=f2e359]:
+                    - generic [ref=f2e360]: Git
+                    - generic [ref=f2e361]: vcs
+                  - listitem [ref=f2e362]:
+                    - generic [ref=f2e363]: GitHub
+                    - generic [ref=f2e364]: vcs
+                  - listitem [ref=f2e365]:
+                    - generic [ref=f2e366]: Postman
+                    - generic [ref=f2e367]: api
+                  - listitem [ref=f2e368]:
+                    - generic [ref=f2e369]: VS Code
+                    - generic [ref=f2e370]: editor
+                  - listitem [ref=f2e371]:
+                    - generic [ref=f2e372]: Linux
+                    - generic [ref=f2e373]: os
+                  - listitem [ref=f2e374]:
+                    - generic [ref=f2e375]: Docker
+                    - generic [ref=f2e376]: runtime
+              - generic [ref=f2e377]:
+                - generic [ref=f2e378]: Deployment
+                - list [ref=f2e379]:
+                  - listitem [ref=f2e380]:
+                    - generic [ref=f2e381]: Azure
+                    - generic [ref=f2e382]: cloud
+                  - listitem [ref=f2e383]:
+                    - generic [ref=f2e384]: Vercel
+                    - generic [ref=f2e385]: deploy
+                  - listitem [ref=f2e386]:
+                    - generic [ref=f2e387]: DigitalOcean
+                    - generic [ref=f2e388]: cloud
+                  - listitem [ref=f2e389]:
+                    - generic [ref=f2e390]: Cloudflare
+                    - generic [ref=f2e391]: edge
+                  - listitem [ref=f2e392]:
+                    - generic [ref=f2e393]: Nginx
+                    - generic [ref=f2e394]: server
+    - generic [ref=f2e395]:
+      - region [ref=f2e396]:
+        - generic [ref=f2e397]:
+          - generic [ref=f2e398]:
+            - generic [ref=f2e399]:
+              - generic [ref=f2e400]: "05"
+              - generic [ref=f2e401]: About
+            - heading "About" [level=2] [ref=f2e402]
+            - generic [ref=f2e403]: Who
+          - generic [ref=f2e404]:
+            - blockquote [ref=f2e405]:
+              - paragraph [ref=f2e406]: I'm passionate about building scalable enterprise applications that solve real business problems. From designing backend architecture and APIs to crafting intuitive user interfaces, I enjoy delivering complete products that are reliable, maintainable, and ready for production.
+            - generic [ref=f2e407]:
+              - generic [ref=f2e408]:
+                - term [ref=f2e409]: Current role
+                - definition [ref=f2e410]: Associate Software Engineer · MetaUpSpace
+              - generic [ref=f2e411]:
+                - term [ref=f2e412]: Education
+                - definition [ref=f2e413]: B.Tech CSE · KIET Group of Institutions
+              - generic [ref=f2e414]:
+                - term [ref=f2e415]: CGPA
+                - definition [ref=f2e416]: 8.7 / 10
+              - generic [ref=f2e417]:
+                - term [ref=f2e418]: Experience
+                - definition [ref=f2e419]: 2+ years
+              - generic [ref=f2e420]:
+                - term [ref=f2e421]: Location
+                - definition [ref=f2e422]: India
+              - generic [ref=f2e423]:
+                - term [ref=f2e424]: Availability
+                - definition [ref=f2e425]: Open to full-time opportunities
+      - region [ref=f2e426]:
+        - generic [ref=f2e429]:
+          - generic [ref=f2e430]:
+            - generic [ref=f2e431]: "06"
+            - generic [ref=f2e432]: Contact
+          - heading "Need a scalable web application, ERP platform, internal tool, or enterprise SaaS product?" [level=2] [ref=f2e433]
+          - paragraph [ref=f2e434]: Let's build software that delivers real business impact — specializing in scalable full-stack web applications, enterprise software, and modern product engineering.
+          - generic [ref=f2e435]:
+            - link "Start a conversation" [ref=f2e436] [cursor=pointer]:
+              - /url: mailto:sakshamjaindevs@gmail.com
+            - link "Book a 20-min intro" [ref=f2e437] [cursor=pointer]:
+              - /url: "#"
+  - contentinfo [ref=f2e438]:
+    - generic [ref=f2e439]:
+      - generic [ref=f2e440]:
+        - generic [ref=f2e441]:
+          - link "Saksham Jain" [ref=f2e442] [cursor=pointer]:
+            - /url: "#top"
+          - paragraph [ref=f2e444]: Full-stack developer building enterprise SaaS, ERP & workflow systems that scale.
+        - generic [ref=f2e445]:
+          - heading "Site" [level=4] [ref=f2e446]
+          - list [ref=f2e447]:
+            - listitem [ref=f2e448]:
+              - link "Work" [ref=f2e449] [cursor=pointer]:
+                - /url: "#work"
+            - listitem [ref=f2e450]:
+              - link "Capabilities" [ref=f2e451] [cursor=pointer]:
+                - /url: "#capabilities"
+            - listitem [ref=f2e452]:
+              - link "Approach" [ref=f2e453] [cursor=pointer]:
+                - /url: "#process"
+            - listitem [ref=f2e454]:
+              - link "Stack" [ref=f2e455] [cursor=pointer]:
+                - /url: "#stack"
+            - listitem [ref=f2e456]:
+              - link "About" [ref=f2e457] [cursor=pointer]:
+                - /url: "#about"
+        - generic [ref=f2e458]:
+          - heading "Contact" [level=4] [ref=f2e459]
+          - list [ref=f2e460]:
+            - listitem [ref=f2e461]:
+              - link "sakshamjain.codes" [ref=f2e462] [cursor=pointer]:
+                - /url: mailto:sakshamjaindevs@gmail.com
+            - listitem [ref=f2e463]:
+              - link "Start a project" [ref=f2e464] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=f2e465]:
+          - heading "Social" [level=4] [ref=f2e466]
+          - list [ref=f2e467]:
+            - listitem [ref=f2e468]:
+              - link "GitHub ↗" [ref=f2e469] [cursor=pointer]:
+                - /url: https://github.com/Sakshamjain98
+        - generic [ref=f2e470]:
+          - heading "Now" [level=4] [ref=f2e471]
+          - list [ref=f2e472]:
+            - listitem [ref=f2e473]: Full-time opportunities
+            - listitem [ref=f2e474]: Product Eng. & AI Platforms
+      - generic [ref=f2e475]:
+        - generic [ref=f2e476]:
+          - text: © 2026 · Designed, developed, and deployed by
+          - link "Saksham Jain" [ref=f2e477] [cursor=pointer]:
+            - /url: https://sakshamjain.codes
+        - generic [ref=f2e478]: last updated 07 / 26
+  - button "Open Next.js Dev Tools" [ref=f2e484] [cursor=pointer]

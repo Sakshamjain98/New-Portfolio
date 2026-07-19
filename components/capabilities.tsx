@@ -16,7 +16,7 @@ export function Capabilities(): React.ReactElement {
           label="Capabilities"
           aside="What I do"
           titleId="cap-h"
-          title="Three practices that compound engineering, AI systems, and interface design."
+          title="Three practices that compound product engineering, enterprise systems, and interface design."
         />
 
         <RevealGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

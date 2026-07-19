@@ -12,7 +12,7 @@ import { getWeather } from "@/lib/weather"
 
 const title = "Saksham Jain · Full-stack Web Developer"
 const description =
-  "Full-stack web developer with 2+ years of experience building and shipping scalable products fast, using Claude Code AI agents throughout the development workflow."
+  "Full-stack web developer with 2+ years of experience building enterprise SaaS, ERP, and warehouse management systems, from architecture to deployment."
 
 export const metadata: Metadata = {
   title: { absolute: title },

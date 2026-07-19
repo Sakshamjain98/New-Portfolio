@@ -18,8 +18,8 @@ export function SiteFooter(): React.ReactElement {
               Saksham Jain
             </Link>
             <p className="mt-3 max-w-[32ch] text-sm leading-[1.55] text-body">
-              Full-stack web developer building and delivering scalable
-              products fast, using Claude Code AI agents.
+              Full-stack developer building enterprise SaaS, ERP & workflow
+              systems that scale.
             </p>
           </div>
 
@@ -46,15 +46,15 @@ export function SiteFooter(): React.ReactElement {
           <div>
             <h4 className="caption-uppercase mb-4 text-muted-ink">Now</h4>
             <ul className="flex flex-col gap-2 text-sm">
-              <li className="text-ink">Open to work</li>
-              <li className="text-body">Remote · India</li>
+              <li className="text-ink">Full-time opportunities</li>
+              <li className="text-body">Product Eng. & AI Platforms</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-hairline-soft pt-6 font-mono text-[11px] tracking-[0.06em] text-muted-ink">
           <span>
-            © {year} · Designed &amp; built with care by{" "}
+            © {year} · Designed, developed, and deployed by{" "}
             <Link
               href="https://sakshamjain.codes"
               className="text-body transition-colors hover:text-ink"

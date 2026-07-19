@@ -23,11 +23,11 @@ export const NAV_LINKS = [
 // --- Practice strip -------------------------------------------------------
 // components/practice-strip.tsx — the thin band of practice areas.
 export const PRACTICE_AREAS = [
-  { k: "01", v: "AI SaaS products" },
-  { k: "02", v: "Full-stack systems" },
-  { k: "03", v: "Workflow automation" },
-  { k: "04", v: "Product UI" },
-  { k: "05", v: "API-first architecture" },
+  { k: "01", v: "Enterprise SaaS" },
+  { k: "02", v: "Full-stack applications" },
+  { k: "03", v: "ERP & workflow systems" },
+  { k: "04", v: "Modern product UI" },
+  { k: "05", v: "Backend architecture" },
 ] as const
 
 // --- Selected work --------------------------------------------------------
@@ -47,68 +47,68 @@ export type Project = {
 export const PROJECTS: readonly Project[] = [
   {
     index: "01",
-    title: "AI Interior Design Platform",
+    title: "Pharmansh WMS",
     description:
-      "A workflow-driven SaaS product for interior designers and architects, combining image transformation, regional processing, and public API delivery.",
+      "Enterprise warehouse management system for pharmaceutical inventory, order processing, purchase workflows, GRN, replenishment, stock adjustment, and role-based operations handling 4,000+ orders per day.",
     year: "2025",
-    status: "Live · v3.2",
-    tags: ["AI SaaS", "Image workflows", "API", "B2B"],
+    status: "Production",
+    tags: ["Warehouse Management", "Healthcare", "RBAC", "Inventory", "Cosmos DB"],
     href: "#",
     image: "/assets/projects/interior-design-platform.png",
     imageAlt:
-      "Interior design platform UI showing a before/after room render with a materials palette and a generate-design control bar.",
+      "Pharmansh warehouse management system dashboard showing inventory levels, order processing, and stock adjustment workflows.",
   },
   {
     index: "02",
-    title: "AI Headshot Generator",
+    title: "ERP System",
     description:
-      "A polished consumer and team headshot experience with model training, image editing, credits, and premium generation flows.",
-    year: "2025",
-    status: "Live",
-    tags: ["AI Images", "Product UX", "Credits", "Teams"],
+      "ERP platform managing 1,700+ institutions and over 200,000 students, with modules for registration, examinations, inspections, finance, and reporting.",
+    year: "2024",
+    status: "Production",
+    tags: ["ERP", "Education", "Automation", "Firebase", "Dashboard"],
     href: "#",
     image: "/assets/projects/headshot-generator.png",
     imageAlt:
-      "AI headshot generator UI with a grid of generated professional portraits, style and lighting controls, and a credits counter.",
+      "ERP system dashboard showing institution registration, examination modules, and finance reporting.",
   },
   {
     index: "03",
-    title: "Automation & Agent Systems",
+    title: "Attendance Management System",
     description:
-      "Internal tools, workflow engines, and agent-backed systems designed to reduce manual operations and speed up product execution.",
+      "Employee attendance platform with automated timesheets, leave workflows, presence tracking, and reporting dashboards.",
     year: "2024",
-    status: "Private",
-    tags: ["Automation", "Agents", "Workflows", "Infra"],
+    status: "Production",
+    tags: ["HRMS", "Attendance", "Automation", "Analytics"],
     href: "#",
     image: "/assets/projects/automation-agent-systems.png",
     imageAlt:
-      "Dark automation dashboard showing an agent workflow node graph alongside a live event stream and run log.",
+      "Attendance management dashboard showing employee timesheets, leave workflows, and presence tracking.",
   },
   {
     index: "04",
-    title: "Document Intelligence",
+    title: "Finance & Business Automation",
     description:
-      "Extraction, classification, and review tooling that turns dense unstructured documents into structured, queryable records.",
+      "AI-assisted finance and workflow management systems streamlining business operations and decision-making across startups.",
     year: "2024",
-    status: "Live",
-    tags: ["NLP", "Extraction", "Review UX", "Pipelines"],
+    status: "Production",
+    tags: ["Finance", "Automation", "AI", "Analytics"],
     href: "#",
     image: "/assets/projects/document-intelligence.png",
     imageAlt:
-      "Document intelligence UI extracting structured fields from an invoice, with a review queue and confidence indicators.",
+      "Finance automation dashboard showing workflow management and business analytics.",
   },
   {
     index: "05",
-    title: "Data Labeling Platform",
+    title: "Portfolio / Internal Tools",
     description:
-      "A collaborative annotation surface with quality controls, reviewer queues, and exports tuned for fast model iteration.",
+      "Internal tooling covering employee status tracking, registration flows, permissions systems, role-based access, and API architecture.",
     year: "2023",
-    status: "Live",
-    tags: ["Labeling", "Collaboration", "QA", "Tooling"],
+    status: "Internal",
+    tags: ["Employee Status", "Registration Flow", "Permissions", "RBAC", "API Architecture"],
     href: "#",
     image: "/assets/projects/data-labeling-platform.png",
     imageAlt:
-      "Data labeling platform annotating a room scene with bounding boxes, a reviewer queue, and a quality score panel.",
+      "Internal tools dashboard showing employee status, registration flow, and role-based permissions.",
   },
 ]
 
@@ -119,40 +119,33 @@ export const CAPABILITIES = [
   {
     num: "— 01",
     title: "Product engineering",
-    body: "End-to-end SaaS systems built for actual production load. Type-safe APIs, predictable data layers, and a frontend that survives real users without ceremony.",
-    items: [
-      "Next.js",
-      "Hono / tRPC",
-      "Postgres",
-      "Drizzle",
-      "Stripe",
-      "Edge / Workers",
-    ],
+    body: "Production-ready SaaS applications built with scalable architectures, secure APIs, and modern frontend systems optimized for real-world usage.",
+    items: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Cosmos DB"],
   },
   {
     num: "— 02",
-    title: "AI workflow systems",
-    body: "Image, text, and agent pipelines that respect latency, cost, and failure modes. The hard parts — queues, retries, observability — built in from day one.",
+    title: "Enterprise systems",
+    body: "ERP, warehouse management, attendance, HRMS, and workflow automation platforms designed for operational efficiency and long-term scalability.",
     items: [
-      "OpenAI",
-      "Replicate",
-      "Vercel AI SDK",
-      "Inngest",
-      "Queues",
-      "Vector DBs",
+      "Role Based Access",
+      "Workflow Engine",
+      "REST APIs",
+      "Automation",
+      "Reporting",
+      "Permissions",
     ],
   },
   {
     num: "— 03",
-    title: "Interface design",
-    body: "Calm, opinionated product UI with restraint. Typography, hierarchy, and motion treated as engineering disciplines — not decoration applied at the end.",
+    title: "Modern UI engineering",
+    body: "Responsive, accessible, and maintainable interfaces built with modern component systems and scalable frontend architecture.",
     items: [
-      "Design systems",
       "Tailwind",
-      "Radix / shadcn",
-      "Framer Motion",
+      "Shadcn",
+      "Radix",
+      "TypeScript",
       "Figma",
-      "Prototyping",
+      "Responsive Design",
     ],
   },
 ] as const
@@ -162,23 +155,23 @@ export const CAPABILITIES = [
 export const APPROACH_STEPS = [
   {
     k: "— Step 01",
-    t: "Understand the business goal",
-    d: "Before any UI or schema. What does this product change for the people using it, and how do we know it worked?",
+    t: "Understand requirements",
+    d: "Business requirements, workflows, edge cases, and user journeys — before any UI or schema gets touched.",
   },
   {
     k: "— Step 02",
-    t: "Design the smallest useful product",
-    d: "The shortest path between a real user and a real outcome. Everything else is deferred until the core is honest.",
+    t: "Architect the solution",
+    d: "Database design, APIs, permissions, scalability, and deployment planning, mapped out before a line of production code.",
   },
   {
     k: "— Step 03",
-    t: "Build with production architecture",
-    d: "Type-safe from edge to database. Observability, retries, and migrations as first-class — not bolted on under pressure.",
+    t: "Build production systems",
+    d: "Type-safe APIs, reusable frontend, optimized backend, and testing — built for real load, not a demo.",
   },
   {
     k: "— Step 04",
-    t: "Refine until it feels effortless",
-    d: "The last 20% is where products stop feeling like demos. Latency, copy, motion, edge cases — sanded down until they disappear.",
+    t: "Optimize & ship",
+    d: "Performance tuning, monitoring, documentation, deployment, and maintenance until it's genuinely production-ready.",
   },
 ] as const
 
@@ -186,41 +179,46 @@ export const APPROACH_STEPS = [
 // components/stack.tsx — the editor-mockup panes. Each item is [name, tag].
 export const STACK_PANES = [
   {
-    title: "Application",
+    title: "Frontend",
     items: [
       ["Next.js", "framework"],
+      ["React", "ui"],
       ["TypeScript", "language"],
-      ["React 19", "ui"],
       ["Tailwind CSS", "styling"],
-      ["Radix / shadcn", "primitives"],
+      ["Shadcn UI", "primitives"],
+      ["Radix UI", "primitives"],
     ],
   },
   {
-    title: "Server & data",
+    title: "Backend",
     items: [
-      ["Node.js / Hono", "runtime"],
-      ["Postgres", "database"],
-      ["Drizzle ORM", "data"],
-      ["Cloudflare", "edge"],
-      ["Vercel", "deploy"],
+      ["Node.js", "runtime"],
+      ["Express.js", "framework"],
+      ["MongoDB", "database"],
+      ["Azure Cosmos DB", "database"],
+      ["Firebase", "backend"],
+      ["Prisma", "orm"],
     ],
   },
   {
-    title: "AI & workflows",
+    title: "Dev tools",
     items: [
-      ["Vercel AI SDK", "orchestration"],
-      ["OpenAI / Anthropic", "models"],
-      ["Replicate", "image"],
-      ["Inngest", "workflows"],
-    ],
-  },
-  {
-    title: "Infra",
-    items: [
+      ["Git", "vcs"],
+      ["GitHub", "vcs"],
+      ["Postman", "api"],
+      ["VS Code", "editor"],
+      ["Linux", "os"],
       ["Docker", "runtime"],
-      ["Resend", "email"],
-      ["Stripe", "payments"],
-      ["PostHog / Sentry", "observability"],
+    ],
+  },
+  {
+    title: "Deployment",
+    items: [
+      ["Azure", "cloud"],
+      ["Vercel", "deploy"],
+      ["DigitalOcean", "cloud"],
+      ["Cloudflare", "edge"],
+      ["Nginx", "server"],
     ],
   },
 ] as const
@@ -228,11 +226,12 @@ export const STACK_PANES = [
 // --- About ----------------------------------------------------------------
 // components/contact.tsx (About band) — the meta definition list. [key, value].
 export const ABOUT_META = [
-  ["Based", "India · GMT +5:30"],
-  ["Practice", "Full-stack web development"],
-  ["Years shipping", "2+"],
-  ["Toolset", "Claude Code AI agents"],
-  ["Availability", "Open to work"],
+  ["Current role", "Associate Software Engineer · MetaUpSpace"],
+  ["Education", "B.Tech CSE · KIET Group of Institutions"],
+  ["CGPA", "8.7 / 10"],
+  ["Experience", "2+ years"],
+  ["Location", "India"],
+  ["Availability", "Open to full-time opportunities"],
 ] as const
 
 // --- Site footer ----------------------------------------------------------
@@ -261,20 +260,19 @@ export const FOOTER_COLUMNS = [
   },
 ] as const
 
-// --- Token-usage widget ---------------------------------------------------
-// components/widgets/token-usage.tsx — sample usage rows.
-export type Vendor = "Anthropic" | "OpenAI" | "Google" | "Mistral"
-
-export type UsageRow = {
-  model: string
-  vendor: Vendor
-  tokens: number
-  costUsd: number
+// --- Profile stats widget --------------------------------------------------
+// components/widgets/profile-stats.tsx — hero snapshot card.
+export type ProfileStat = {
+  value: string
+  label: string
 }
 
-export const TOKEN_USAGE: UsageRow[] = [
-  { model: "Opus 4.7", vendor: "Anthropic", tokens: 8_230_000, costUsd: 211 },
-  { model: "Sonnet 4.6", vendor: "Anthropic", tokens: 2_400_000, costUsd: 42 },
-  { model: "Haiku 4.5", vendor: "Anthropic", tokens: 1_140_000, costUsd: 19 },
-  { model: "GPT-5", vendor: "OpenAI", tokens: 730_000, costUsd: 12 },
+export const PROFILE_STATS: readonly ProfileStat[] = [
+  { value: "2+", label: "Years experience" },
+  { value: "4+", label: "Production products" },
+  { value: "200K+", label: "Users served" },
+  { value: "4,000+", label: "Orders processed daily" },
+  { value: "8.7", label: "CGPA · B.Tech CSE" },
 ]
+
+export const PROFILE_STATS_ROLE = "Associate Software Engineer"
