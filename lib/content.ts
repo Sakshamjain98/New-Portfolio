@@ -229,10 +229,10 @@ export const STACK_PANES = [
 // components/contact.tsx (About band) — the meta definition list. [key, value].
 export const ABOUT_META = [
   ["Based", "India · GMT +5:30"],
-  ["Practice", "AI-first SaaS products"],
-  ["Years shipping", "6+"],
-  ["Availability", "Selected product builds"],
-  ["Engagements", "Fractional · Build · Advisory"],
+  ["Practice", "Full-stack web development"],
+  ["Years shipping", "2+"],
+  ["Toolset", "Claude Code AI agents"],
+  ["Availability", "Open to work"],
 ] as const
 
 // --- Site footer ----------------------------------------------------------
@@ -251,17 +251,13 @@ export const FOOTER_COLUMNS = [
   {
     title: "Contact",
     links: [
-      ["codebucks.agency", "mailto:codebucks27@gmail.com"],
+      ["sakshamjain.codes", "mailto:sakshamjaindevs@gmail.com"],
       ["Start a project", "#contact"],
     ],
   },
   {
     title: "Social",
-    links: [
-      ["GitHub ↗", "https://github.com/codebucks27"],
-      ["LinkedIn ↗", "https://www.linkedin.com/in/codebucks/"],
-      ["X / Twitter ↗", "https://x.com/code_bucks"],
-    ],
+    links: [["GitHub ↗", "https://github.com/Sakshamjain98"]],
   },
 ] as const
 

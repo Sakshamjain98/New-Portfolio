@@ -15,11 +15,11 @@ export function SiteFooter(): React.ReactElement {
               className="inline-flex items-baseline gap-1.5 text-[15px] font-medium tracking-[-0.01em] text-ink"
             >
               <span className="size-1.5 -translate-y-px rounded-full bg-primary" />
-              CodeBucks
+              Saksham Jain
             </Link>
             <p className="mt-3 max-w-[32ch] text-sm leading-[1.55] text-body">
-              Independent developer building AI-first SaaS products. Available
-              for selected engagements.
+              Full-stack web developer building and delivering scalable
+              products fast, using Claude Code AI agents.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export function SiteFooter(): React.ReactElement {
           <div>
             <h4 className="caption-uppercase mb-4 text-muted-ink">Now</h4>
             <ul className="flex flex-col gap-2 text-sm">
-              <li className="text-ink">Q3 2026 · 2 slots</li>
+              <li className="text-ink">Open to work</li>
               <li className="text-body">Remote · India</li>
             </ul>
           </div>
@@ -56,10 +56,10 @@ export function SiteFooter(): React.ReactElement {
           <span>
             © {year} · Designed &amp; built with care by{" "}
             <Link
-              href="https://codebucks.agency"
+              href="https://sakshamjain.codes"
               className="text-body transition-colors hover:text-ink"
             >
-              CodeBucks
+              Saksham Jain
             </Link>
           </span>
           <span>last updated 07 / 26</span>

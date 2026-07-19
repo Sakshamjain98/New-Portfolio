@@ -42,8 +42,9 @@ export function Contact(): React.ReactElement {
               <p className="max-w-[22ch] text-[clamp(1.5rem,2.6vw,2.125rem)] leading-[1.25] tracking-[-0.02em] text-ink">
                 I&apos;m a developer who cares about both the{" "}
                 <span className="text-ink">system</span> and the{" "}
-                <span className="text-ink">surface</span>: the architecture
-                users never see, and the interface they feel every second.
+                <span className="text-ink">surface</span>: shipping scalable
+                products fast with Claude Code AI agents woven into every
+                stage of development.
               </p>
             </Reveal>
 
@@ -104,7 +105,7 @@ export function Contact(): React.ReactElement {
                   className="h-11 rounded-md bg-primary px-5 text-sm font-medium text-on-primary hover:bg-primary-active"
                 >
                   <Link
-                    href="mailto:codebucks27@gmail.com"
+                    href="mailto:sakshamjaindevs@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

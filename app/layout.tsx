@@ -10,13 +10,13 @@ const fontSans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codebucks.agency"),
+  metadataBase: new URL("https://sakshamjain.codes"),
   title: {
-    default: "CodeBucks · Full-stack engineer, AI-first",
-    template: "%s · CodeBucks",
+    default: "Saksham Jain · Full-stack Web Developer",
+    template: "%s · Saksham Jain",
   },
   description:
-    "Full-stack engineer designing and shipping AI-native software from the inference layer to the last interaction.",
+    "Full-stack web developer with 2+ years of experience building and shipping scalable products fast, using Claude Code AI agents throughout the development workflow.",
 }
 
 export const viewport: Viewport = {

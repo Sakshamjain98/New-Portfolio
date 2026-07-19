@@ -183,7 +183,7 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 {...reveal(0.2)}
                 className="caption-uppercase text-overlay-cream/70"
               >
-                Full-stack · AI-first engineer
+                Full-stack Web Developer · 2+ yrs experience
               </motion.p>
 
               <motion.h1
@@ -201,9 +201,9 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 {...reveal(0.38)}
                 className="mt-6 max-w-[560px] text-[15px] leading-[1.6] text-overlay-cream/80 sm:text-base"
               >
-                I&apos;m CodeBucks, a full-stack engineer designing and shipping
-                AI-native products from the inference layer to the last
-                interaction.
+                I&apos;m Saksham Jain, a full-stack web developer with 2+ years
+                of experience building and delivering scalable products fast,
+                using Claude Code AI agents throughout development.
               </motion.p>
 
               <motion.div
