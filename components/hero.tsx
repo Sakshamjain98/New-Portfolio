@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion, useReducedMotion } from "motion/react"
 import { ArrowDownIcon, ArrowUpRightIcon } from "@phosphor-icons/react"
 
+import { BookCallButton } from "@/components/book-call-button"
 import { Button } from "@/components/ui/button"
 import {
   DayNightSwitch,
@@ -213,21 +214,19 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 {...reveal(0.48)}
                 className="mt-9 flex flex-wrap items-center gap-3"
               >
-                <Button
-                  asChild
+                <BookCallButton
+                  theme="dark"
                   className="h-11 rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground hover:bg-primary-active focus-visible:ring-primary/40"
                 >
-                  <Link href="#work">
-                    View selected work
-                    <ArrowUpRightIcon size={16} weight="bold" />
-                  </Link>
-                </Button>
+                  Book a call
+                  <ArrowUpRightIcon size={16} weight="bold" />
+                </BookCallButton>
                 <Button
                   asChild
                   variant="ghost"
                   className="h-11 rounded-md border border-overlay-cream/25 bg-overlay-cream/[0.06] px-5 text-sm font-medium text-overlay-cream backdrop-blur-[2px] hover:bg-overlay-cream/15 hover:text-overlay-cream"
                 >
-                  <Link href="#contact">Get in touch</Link>
+                  <Link href="#work">View selected work</Link>
                 </Button>
               </motion.div>
             </div>

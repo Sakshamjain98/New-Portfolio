@@ -1,10 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowUpRightIcon } from "@phosphor-icons/react"
 
-import { Button } from "@/components/ui/button"
+import { BookCallButton } from "@/components/book-call-button"
+import { ContactForm } from "@/components/contact-form"
 import { Reveal, RevealGroup } from "@/components/reveal"
 import { SectionHead, SectionShell } from "@/components/section-shell"
 import { ABOUT_META } from "@/lib/content"
@@ -101,28 +101,19 @@ export function Contact(): React.ReactElement {
               </Reveal>
 
               <Reveal className="mt-9 inline-flex flex-wrap gap-3 lg:justify-end">
-                <Button
-                  asChild
-                  className="h-11 rounded-md bg-primary px-5 text-sm font-medium text-on-primary hover:bg-primary-active"
-                >
-                  <Link
-                    href="mailto:sakshamjaindevs@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Start a conversation
-                    <ArrowUpRightIcon size={14} weight="bold" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
+                <BookCallButton
                   variant="outline"
                   className="h-11 rounded-md border-hairline-strong bg-surface-card px-5 text-sm font-medium text-ink hover:bg-canvas-soft"
                 >
-                  <Link href="#">Book a 20-min intro</Link>
-                </Button>
+                  Book a call
+                  <ArrowUpRightIcon size={14} weight="bold" />
+                </BookCallButton>
               </Reveal>
             </RevealGroup>
+
+            <Reveal as="div" className="mt-14 lg:col-span-7 lg:col-start-6">
+              <ContactForm />
+            </Reveal>
           </div>
         </SectionShell>
       </section>
