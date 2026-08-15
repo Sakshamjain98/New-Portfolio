@@ -37,6 +37,9 @@ export type Project = {
   title: string
   description: string
   year: string
+  // External live-product URL the year badge links to (case studies without
+  // a live product, e.g. internal tools, omit this and render plain text).
+  yearHref?: string
   status: string
   tags: readonly string[]
   href: string
@@ -47,68 +50,69 @@ export type Project = {
 export const PROJECTS: readonly Project[] = [
   {
     index: "01",
-    title: "Pharmansh WMS",
+    title: "Trexind",
     description:
-      "Enterprise warehouse management system for pharmaceutical inventory, order processing, purchase workflows, GRN, replenishment, stock adjustment, and role-based operations handling 4,000+ orders per day.",
-    year: "2025",
+      "AI operating system for local businesses — connects Google Business Profile data, reviews, and competitor tracking into a weekly plan, with booking, billing, and WhatsApp automation across clinics, restaurants, and salons.",
+    year: "2026",
+    yearHref: "https://trexind.com",
     status: "Production",
-    tags: ["Warehouse Management", "Healthcare", "RBAC", "Inventory", "Cosmos DB"],
-    href: "#",
-    image: "/assets/projects/interior-design-platform.png",
+    tags: ["SaaS", "Full-Stack", "AI", "Restaurants", "Clinics", "WhatsApp API"],
+    href: "/work/trexind",
+    image: "/assets/projects/trexind-dashboard.png",
     imageAlt:
-      "Pharmansh warehouse management system dashboard showing inventory levels, order processing, and stock adjustment workflows.",
+      "Trexind dashboard showing Google Business Profile insights, review replies, and weekly AI-generated summary.",
   },
   {
     index: "02",
-    title: "ERP System",
+    title: "PS Classes",
     description:
-      "ERP platform managing 1,700+ institutions and over 200,000 students, with modules for registration, examinations, inspections, finance, and reporting.",
-    year: "2024",
+      "Pharmacy exam-prep platform for Drug Inspector aspirants — category-wise test series with real-exam pacing, chapter-wise analytics and All-India Rank, plus course library, student auth, and free-trial flow.",
+    year: "2025",
     status: "Production",
-    tags: ["ERP", "Education", "Automation", "Firebase", "Dashboard"],
-    href: "#",
-    image: "/assets/projects/headshot-generator.png",
+    tags: ["EdTech", "Pharmacy Exams", "Test Series", "Full-Stack", "Auth"],
+    href: "/work/ps-classes",
+    image: "/assets/projects/psclasses-hero.png",
     imageAlt:
-      "ERP system dashboard showing institution registration, examination modules, and finance reporting.",
+      "PS Classes homepage hero showing Drug Inspector exam prep positioning and course video panel.",
   },
   {
     index: "03",
-    title: "Attendance Management System",
+    title: "FindYourVibe",
     description:
-      "Employee attendance platform with automated timesheets, leave workflows, presence tracking, and reporting dashboards.",
-    year: "2024",
+      "Event discovery and ticketing platform for Raipur, Delhi NCR, and beyond — browse by category, city, and vibe, then book tickets with zero convenience fee.",
+    year: "2026",
     status: "Production",
-    tags: ["HRMS", "Attendance", "Automation", "Analytics"],
-    href: "#",
-    image: "/assets/projects/automation-agent-systems.png",
+    tags: ["Events", "Ticketing", "Marketplace", "Full-Stack"],
+    href: "/work/findyourvibe",
+    image: "/assets/projects/findyourvibe-hero.png",
     imageAlt:
-      "Attendance management dashboard showing employee timesheets, leave workflows, and presence tracking.",
+      "FindYourVibe homepage hero inviting visitors to search events by vibe and city.",
   },
   {
     index: "04",
-    title: "Finance & Business Automation",
+    title: "Uddeshhya",
     description:
-      "AI-assisted finance and workflow management systems streamlining business operations and decision-making across startups.",
-    year: "2024",
-    status: "Production",
-    tags: ["Finance", "Automation", "AI", "Analytics"],
-    href: "#",
-    image: "/assets/projects/document-intelligence.png",
+      "Website for a student-led NGO — volunteer registration, blood donation portal with certificate generation, project pages, and donation drives, built end to end.",
+    year: "2023",
+    status: "Live",
+    tags: ["NGO", "Non-Profit", "Volunteer Management", "Certificates", "Full-Stack"],
+    href: "/work/uddeshhya",
+    image: "/assets/projects/uddeshhya-hero.png",
     imageAlt:
-      "Finance automation dashboard showing workflow management and business analytics.",
+      "Uddeshhya NGO homepage hero with donate and volunteer calls-to-action alongside community impact photos.",
   },
   {
     index: "05",
-    title: "Portfolio / Internal Tools",
+    title: "Skyxis",
     description:
-      "Internal tooling covering employee status tracking, registration flows, permissions systems, role-based access, and API architecture.",
-    year: "2023",
-    status: "Internal",
-    tags: ["Employee Status", "Registration Flow", "Permissions", "RBAC", "API Architecture"],
-    href: "#",
-    image: "/assets/projects/data-labeling-platform.png",
+      "D2C e-commerce storefront for premium wireless audio — product catalog, cart, wishlist, quick view, and checkout across headphones, earbuds, and accessories.",
+    year: "2026",
+    status: "Production",
+    tags: ["E-Commerce", "D2C", "Full-Stack", "Next.js"],
+    href: "/work/skyxis",
+    image: "/assets/projects/skyxis-hero.png",
     imageAlt:
-      "Internal tools dashboard showing employee status, registration flow, and role-based permissions.",
+      "Skyxis homepage hero showing the Skyxis Pulse wireless headphones product shot.",
   },
 ]
 

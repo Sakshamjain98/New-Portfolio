@@ -122,9 +122,21 @@ function ProjectCard({
             <div className="flex flex-wrap items-center gap-2">
               <span className="eyebrow text-muted-ink">/ {project.index}</span>
 
-              <span className="ml-auto font-mono text-[11px] tracking-[0.1em] text-muted-ink">
-                {project.year}
-              </span>
+              {project.yearHref ? (
+                <a
+                  href={project.yearHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={isActive ? undefined : -1}
+                  className="ml-auto font-mono text-[11px] tracking-[0.1em] text-muted-ink underline decoration-hairline-strong underline-offset-2 transition-colors hover:text-ink"
+                >
+                  {project.year}
+                </a>
+              ) : (
+                <span className="ml-auto font-mono text-[11px] tracking-[0.1em] text-muted-ink">
+                  {project.year}
+                </span>
+              )}
             </div>
 
             <h3 className="mt-6 text-[1.625rem] tracking-[-0.0125em]">
@@ -264,10 +276,12 @@ function Timeline({
   orientation,
   active,
   reduceMotion,
+  onSelect,
 }: {
   orientation: "horizontal" | "vertical"
   active: number
   reduceMotion: boolean | null
+  onSelect: (index: number) => void
 }): React.ReactElement {
   const isHorizontal = orientation === "horizontal"
   const baseFraction = clamp(active / PROJECTS.length, 0, 1)
@@ -325,10 +339,14 @@ function Timeline({
         const offset = `${((index + 0.5) / PROJECTS.length) * 100}%`
 
         return (
-          <div
+          <button
             key={project.title}
+            type="button"
+            onClick={() => onSelect(index)}
+            aria-label={`Go to ${project.title}`}
+            aria-current={isActive ? "true" : undefined}
             className={cn(
-              "absolute",
+              "group absolute cursor-pointer",
               isHorizontal
                 ? "top-1/2 -translate-x-1/2 -translate-y-1/2"
                 : "left-1/2 flex -translate-x-1/2 items-center"
@@ -337,7 +355,7 @@ function Timeline({
           >
             <motion.span
               className={cn(
-                "block size-1.5 rounded-full transition-colors",
+                "block size-1.5 rounded-full transition-colors group-hover:bg-ink",
                 isActive ? "bg-ink" : "bg-hairline-strong"
               )}
               animate={{ scale: isActive ? 1.4 : 1 }}
@@ -346,14 +364,14 @@ function Timeline({
 
             <span
               className={cn(
-                "absolute font-mono text-[10px] tracking-[0.1em] tabular-nums transition-colors",
+                "absolute font-mono text-[10px] tracking-[0.1em] tabular-nums transition-colors group-hover:text-ink",
                 isHorizontal ? "top-3 left-1/2 -translate-x-1/2" : "left-3",
                 isActive ? "text-muted-ink" : "text-muted-soft/70"
               )}
             >
               {project.year}
             </span>
-          </div>
+          </button>
         )
       })}
     </div>
@@ -439,7 +457,7 @@ export function SelectedWork(): React.ReactElement {
           </div>
 
           <span className="hidden font-mono text-[11px] tracking-[0.1em] text-muted-ink uppercase md:block">
-            2024–2025
+            2023–2026
           </span>
         </div>
 
@@ -522,14 +540,12 @@ export function SelectedWork(): React.ReactElement {
             </nav>
 
             {/* Horizontal timeline — shown sm → lg, removed below 640px. */}
-            <div
-              aria-hidden
-              className="order-2 hidden w-full sm:block lg:hidden"
-            >
+            <div className="order-2 hidden w-full sm:block lg:hidden">
               <Timeline
                 orientation="horizontal"
                 active={active}
                 reduceMotion={reduceMotion}
+                onSelect={goTo}
               />
             </div>
 
@@ -554,14 +570,12 @@ export function SelectedWork(): React.ReactElement {
             />
 
             {/* Vertical timeline — lg+ only. */}
-            <div
-              aria-hidden
-              className="order-5 hidden lg:col-span-1 lg:col-start-12 lg:row-start-1 lg:flex lg:flex-col lg:items-center"
-            >
+            <div className="order-5 hidden lg:col-span-1 lg:col-start-12 lg:row-start-1 lg:flex lg:flex-col lg:items-center">
               <Timeline
                 orientation="vertical"
                 active={active}
                 reduceMotion={reduceMotion}
+                onSelect={goTo}
               />
             </div>
           </div>
