@@ -56,6 +56,11 @@ export default function PSClasses(): React.ReactElement {
             "Attempt state, answer autosave, and the scoring pipeline that feeds rank and chapter analytics off one submission.",
         },
         {
+          area: "Infrastructure",
+          detail:
+            "Redis for live timer/session state and the rank cache; RabbitMQ decoupling scoring from the submit request.",
+        },
+        {
           area: "Access control",
           detail:
             "Single entitlement middleware gating trial, purchased, and admin access across every test and course route.",
@@ -68,22 +73,28 @@ export default function PSClasses(): React.ReactElement {
       ]}
       highlights={[
         "Server-owned exam timer, not client-trusted",
-        "Per-question autosave survives refresh/disconnect",
-        "Incremental rank & percentile rollups, not live scans",
-        "One entitlement check, reused across every route",
+        "Redis-backed session state, sub-second answer writes",
+        "RabbitMQ queue decouples scoring from submission",
+        "Distributed lock stops a double-submit from two tabs",
       ]}
       complexity={[
         {
           problem:
-            "Concurrent test-takers on a shared test series need a countdown nobody can extend by editing their system clock or letting the tab sit in the background.",
+            "Concurrent test-takers on a shared test series need a countdown nobody can extend by editing their system clock or letting the tab sit in the background — and with 500+ students starting a series at the same slot time, that timer state can't be a slow round trip to the primary database on every answer.",
           approach:
-            "Made the server the source of truth for the timer: each answer is submitted and persisted as it's chosen, and the server auto-submits the attempt once the deadline passes, regardless of what the client believes the time is.",
+            "Made the server the source of truth for the timer, backed by Redis: each answer is written to a Redis-held session on selection (sub-second, no DB round trip) and periodically flushed to MongoDB, with the server auto-submitting the attempt once the deadline passes regardless of what the client believes the time is.",
+        },
+        {
+          problem:
+            "A flaky connection can make a student hit submit twice from two tabs — scoring the same attempt twice would double-count it in the rank aggregate.",
+          approach:
+            "A short-lived Redis lock (SETNX-style) on the attempt ID makes the first submit win; the second is rejected as already-processed instead of racing the first into the scoring queue — pessimistic by design, since a submit only happens once and losing a few milliseconds to the lock is cheaper than a corrupted rank.",
         },
         {
           problem:
             "All-India Rank and chapter-wise breakdowns need to reflect every attempt on a series without re-scanning every submission each time a student opens their result.",
           approach:
-            "Score and percentile roll up incrementally as each attempt is scored, so rank and chapter-wise analytics are read from a precomputed aggregate instead of computed live per page view.",
+            "Submitted attempts go on a RabbitMQ queue; a scoring worker consumes them, updates the score/percentile rollup incrementally, and writes the result to Redis so rank and chapter-wise analytics are read from a fast cache instead of computed live per page view.",
         },
         {
           problem:
@@ -98,9 +109,10 @@ export default function PSClasses(): React.ReactElement {
           steps: [
             { label: "Student client", note: "Category → exam → series" },
             { label: "Test session API", note: "Server-owned timer" },
-            { label: "Answer store", note: "Autosaved per question" },
+            { label: "Redis session", note: "Answers, sub-second writes" },
             { label: "Auto-submit", note: "On deadline or manual submit" },
-            { label: "Scoring & rank aggregator" },
+            { label: "RabbitMQ queue" },
+            { label: "Scoring worker", note: "Updates Redis rank cache" },
             { label: "Result dashboard", note: "All-India Rank + chapters" },
           ],
         },
@@ -120,7 +132,16 @@ export default function PSClasses(): React.ReactElement {
         "Chapter-wise analytics and All-India Rank per test series.",
         "Course library, student auth, free-trial gating, and Razorpay checkout.",
       ]}
-      stack={["Next.js", "Node.js", "Express", "MongoDB", "Auth", "Razorpay"]}
+      stack={[
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "RabbitMQ",
+        "Auth",
+        "Razorpay",
+      ]}
     />
   )
 }

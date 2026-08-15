@@ -51,7 +51,12 @@ export default function FindYourVibe(): React.ReactElement {
         {
           area: "API & data model",
           detail:
-            "Event catalog with compound city/category/date indexes, and the atomic ticket-decrement + reservation-hold logic behind checkout.",
+            "Event catalog with compound city/category/date indexes, and the pessimistic-lock ticket decrement behind checkout.",
+        },
+        {
+          area: "Infrastructure",
+          detail:
+            "Redis-backed reservation holds (TTL) and a RabbitMQ queue decoupling ticket issuance from the payment webhook response.",
         },
         {
           area: "Integrations",
@@ -65,17 +70,17 @@ export default function FindYourVibe(): React.ReactElement {
         },
       ]}
       highlights={[
-        "Atomic ticket decrement, not read-then-write",
-        "Reservation hold with TTL, no overselling",
+        "Pessimistic row lock on the last few tickets of an event",
+        "Redis reservation hold with TTL, no overselling",
+        "RabbitMQ decouples ticket issuance from the webhook",
         "Idempotent payment webhook, keyed on order ID",
-        "Compound city/category/date indexes for search",
       ]}
       complexity={[
         {
           problem:
-            "A limited-capacity event can be oversold if two people check out the last available ticket at the same moment — a naive read-then-write on the ticket count races.",
+            "A limited-capacity event can be oversold if two people check out the last available ticket at the same moment — a naive read-then-write on the ticket count races, and a plain optimistic retry starts thrashing once a popular event's last few tickets get hit by a burst of checkouts.",
           approach:
-            "Ticket count is decremented atomically at the database level on checkout (a conditional update, not a read-then-write), paired with a short reservation hold that expires and releases the ticket back to inventory if payment isn't completed in time.",
+            "Ticket rows are decremented inside a short transaction holding a pessimistic row lock, so the second buyer's write blocks for milliseconds behind the first instead of retrying blind — worth the small latency here because the alternative (optimistic compare-and-swap) means the losing buyer's client has to retry the whole checkout, not just a write. That decision reserves a slot in Redis with a TTL, so a buyer who abandons checkout releases the ticket back to inventory automatically instead of holding it hostage.",
         },
         {
           problem:
@@ -85,9 +90,9 @@ export default function FindYourVibe(): React.ReactElement {
         },
         {
           problem:
-            "Payment webhooks can arrive more than once for the same order — retries, network blips — which would issue duplicate tickets if the handler just acted on every delivery.",
+            "Payment webhooks can arrive more than once for the same order — retries, network blips — which would issue duplicate tickets if the handler just acted on every delivery, and doing ticket generation + email inline in the webhook handler makes the gateway wait on work it doesn't care about.",
           approach:
-            "The webhook handler is keyed on payment/order ID, so a retried delivery confirms the same ticket once instead of issuing a second one.",
+            "The webhook handler is idempotent, keyed on order ID, and its only job is to publish a \"payment confirmed\" event to RabbitMQ — a downstream consumer generates the ticket and sends the confirmation. A retried webhook delivery publishes once (the second is a no-op), and checkout stays correct under 300+ concurrent buyers on a single event drop without overselling a ticket.",
         },
       ]}
       flows={[
@@ -96,9 +101,10 @@ export default function FindYourVibe(): React.ReactElement {
           steps: [
             { label: "Explore / search", note: "City, category, vibe" },
             { label: "Event detail" },
-            { label: "Reservation hold", note: "TTL, releases if unpaid" },
+            { label: "Redis reservation hold", note: "TTL, releases if unpaid" },
             { label: "Payment gateway" },
-            { label: "Webhook", note: "Idempotent on order ID" },
+            { label: "Webhook", note: "Idempotent, publishes to queue" },
+            { label: "RabbitMQ" },
             { label: "Ticket issued", note: "Confirmation sent" },
           ],
         },
@@ -106,7 +112,7 @@ export default function FindYourVibe(): React.ReactElement {
           title: "Last-ticket race",
           steps: [
             { label: "2 buyers, 1 ticket left", note: "Simultaneous checkout" },
-            { label: "Atomic decrement", note: "DB-level conditional update" },
+            { label: "Pessimistic row lock", note: "Short transaction" },
             { label: "Winner", note: "Gets the reservation hold" },
             { label: "Loser", note: "Sees sold-out, no overselling" },
           ],
@@ -118,7 +124,15 @@ export default function FindYourVibe(): React.ReactElement {
         "Idempotent payment webhook handling and ticket issuance.",
         "Upcoming-events and recommended-events rails driven by the same catalog API.",
       ]}
-      stack={["Next.js", "Node.js", "Express", "MongoDB", "Payment Gateway"]}
+      stack={[
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "RabbitMQ",
+        "Payment Gateway",
+      ]}
     />
   )
 }

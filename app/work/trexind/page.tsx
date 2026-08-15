@@ -61,6 +61,11 @@ export default function Trexind(): React.ReactElement {
             "Vertical-specific booking payloads (patient records, table/menu orders) modeled as extensions of one shared booking entity, not a fork per vertical.",
         },
         {
+          area: "Infrastructure",
+          detail:
+            "RabbitMQ job queue for GBP sync and AI summary generation, plus a Redis layer caching profile snapshots and rate-limit counters.",
+        },
+        {
           area: "Integrations",
           detail:
             "WhatsApp Business API webhooks and Google Business Profile sync — both idempotent and rate-limit aware.",
@@ -73,9 +78,9 @@ export default function Trexind(): React.ReactElement {
       ]}
       highlights={[
         "Idempotent WhatsApp webhooks, keyed on message ID",
-        "Per-business rate-limited background jobs",
-        "One booking engine, vertical-agnostic by design",
-        "Human-in-the-loop approval on AI-drafted replies",
+        "RabbitMQ queue, per-business rate-limited consumers",
+        "Redis cache for GBP snapshots + rate-limit counters",
+        "Optimistic locking on booking slots, retry on conflict",
       ]}
       complexity={[
         {
@@ -86,15 +91,21 @@ export default function Trexind(): React.ReactElement {
         },
         {
           problem:
+            "Two customers can hit \"book\" on the same appointment slot or table within milliseconds of each other, especially right after a weekly promo goes out.",
+          approach:
+            "Booking slots carry a version field — the write that loses the race gets a conflict, not a silent overwrite, and retries against the now-current slot state. Went with optimistic locking over a pessimistic row lock because slot writes are short and contested rarely enough that a lock held across the request isn't worth the latency.",
+        },
+        {
+          problem:
             "Weekly AI summaries and review-reply drafts run against Google Business Profile's rate-limited API for every connected business — one slow or throttled account shouldn't stall the batch for everyone else.",
           approach:
-            "Queued GBP sync and summary generation per business as background jobs with per-business backoff, so a rate limit on one account delays only that account's job, not the run.",
+            "GBP sync and summary generation are jobs on a RabbitMQ queue, one consumer per business with its own backoff, so a rate limit on one account delays only that account's job, not the run. The last-synced profile snapshot and per-business rate-limit counters live in Redis, so a retry reads current state without hitting GBP again.",
         },
         {
           problem:
             "WhatsApp delivery retries and duplicate webhook events can double-fire a booking confirmation or a billing charge if handled naively.",
           approach:
-            "Made every WhatsApp webhook handler idempotent, keyed on message ID, so a retried delivery updates state once instead of re-triggering booking or billing side effects.",
+            "Made every WhatsApp webhook handler idempotent, keyed on message ID, so a retried delivery updates state once instead of re-triggering booking or billing side effects. The booking engine holds up under 100+ concurrent bookings across verticals in load testing without a double-booked slot.",
         },
       ]}
       flows={[
@@ -111,7 +122,8 @@ export default function Trexind(): React.ReactElement {
         {
           title: "Weekly AI summary",
           steps: [
-            { label: "GBP sync worker", note: "Per-business, rate-limited" },
+            { label: "RabbitMQ queue", note: "One job per business" },
+            { label: "GBP sync worker", note: "Redis-cached, rate-limited" },
             { label: "Review ingestion" },
             { label: "LLM summarizer", note: "Draft replies + weekly plan" },
             { label: "Owner approval", note: "Approve & post / edit" },
@@ -129,6 +141,8 @@ export default function Trexind(): React.ReactElement {
         "Node.js",
         "Express",
         "MongoDB",
+        "RabbitMQ",
+        "Redis",
         "WhatsApp Business API",
         "Google Business Profile API",
       ]}
