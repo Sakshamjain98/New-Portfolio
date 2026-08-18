@@ -58,7 +58,7 @@ export const PROJECTS: readonly Project[] = [
     status: "Production",
     tags: ["SaaS", "Full-Stack", "AI", "Restaurants", "Clinics", "WhatsApp API"],
     href: "/work/trexind",
-    image: "/assets/projects/trexind-dashboard.png",
+    image: "/assets/projects/trexind-dashboard.jpg",
     imageAlt:
       "Trexind dashboard showing Google Business Profile insights, review replies, and weekly AI-generated summary.",
   },
@@ -84,7 +84,7 @@ export const PROJECTS: readonly Project[] = [
     status: "Production",
     tags: ["Events", "Ticketing", "Marketplace", "Full-Stack"],
     href: "/work/findyourvibe",
-    image: "/assets/projects/findyourvibe-hero.png",
+    image: "/assets/projects/findyourvibe-hero.jpg",
     imageAlt:
       "FindYourVibe homepage hero inviting visitors to search events by vibe and city.",
   },
@@ -97,7 +97,7 @@ export const PROJECTS: readonly Project[] = [
     status: "Live",
     tags: ["NGO", "Non-Profit", "Volunteer Management", "Certificates", "Full-Stack"],
     href: "/work/uddeshhya",
-    image: "/assets/projects/uddeshhya-hero.png",
+    image: "/assets/projects/uddeshhya-hero.jpg",
     imageAlt:
       "Uddeshhya NGO homepage hero with donate and volunteer calls-to-action alongside community impact photos.",
   },
@@ -110,7 +110,7 @@ export const PROJECTS: readonly Project[] = [
     status: "Production",
     tags: ["E-Commerce", "D2C", "Full-Stack", "Next.js"],
     href: "/work/skyxis",
-    image: "/assets/projects/skyxis-hero.png",
+    image: "/assets/projects/skyxis-hero.jpg",
     imageAlt:
       "Skyxis homepage hero showing the Skyxis Pulse wireless headphones product shot.",
   },
