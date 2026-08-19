@@ -71,7 +71,7 @@ export const PROJECTS: readonly Project[] = [
     status: "Production",
     tags: ["EdTech", "Pharmacy Exams", "Test Series", "Full-Stack", "Auth"],
     href: "/work/ps-classes",
-    image: "/assets/projects/psclasses-hero.png",
+    image: "/assets/projects/psclasses-hero.jpg",
     imageAlt:
       "PS Classes homepage hero showing Drug Inspector exam prep positioning and course video panel.",
   },
