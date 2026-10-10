@@ -1,10 +1,13 @@
+import { ARTICLES, type Article } from "@/lib/articles"
 import { FAQS, PROJECTS, STACK_PANES } from "@/lib/content"
+import { SERVICES, type Service } from "@/lib/services"
 
 export const SITE_URL = "https://www.sakshamjain.codes"
 export const SITE_NAME = "Saksham Jain"
 export const SITE_DESCRIPTION =
   "Full-stack web developer with 2+ years of experience building enterprise SaaS, ERP, and warehouse management systems, from architecture to deployment."
 export const GITHUB_URL = "https://github.com/Sakshamjain98"
+export const LINKEDIN_URL = "https://www.linkedin.com/in/sakshamjain007"
 export const CONTACT_EMAIL = "sakshamjaindevs@gmail.com"
 
 export const PERSON_ID = `${SITE_URL}/#person`
@@ -23,7 +26,7 @@ export const personNode = {
   worksFor: { "@type": "Organization", name: "MetaUpSpace", url: "https://www.metaupspace.com" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "KIET Group of Institutions" },
   knowsAbout: STACK_PANES.flatMap((p) => p.items.map(([name]) => name)),
-  sameAs: [GITHUB_URL],
+  sameAs: [LINKEDIN_URL, GITHUB_URL],
 }
 
 export const websiteNode = {
@@ -90,19 +93,92 @@ export function projectGraph(p: (typeof PROJECTS)[number]) {
   }
 }
 
+export function articleGraph(a: Article) {
+  const url = `${SITE_URL}/blog/${a.slug}`
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: a.title,
+        description: a.description,
+        url,
+        mainEntityOfPage: url,
+        datePublished: a.published,
+        dateModified: a.updated ?? a.published,
+        inLanguage: "en",
+        image: `${SITE_URL}/og.png`,
+        author: { "@id": PERSON_ID },
+        publisher: { "@id": PERSON_ID },
+        isPartOf: { "@id": WEBSITE_ID },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Engineering notes", item: `${SITE_URL}/blog` },
+          { "@type": "ListItem", position: 3, name: a.title, item: url },
+        ],
+      },
+    ],
+  }
+}
+
+export function serviceGraph(s: Service) {
+  const url = `${SITE_URL}/services/${s.slug}`
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: s.title,
+        description: s.description,
+        url,
+        serviceType: s.title,
+        provider: { "@id": PERSON_ID },
+        areaServed: [{ "@type": "Country", name: "India" }, { "@type": "Place", name: "Worldwide (remote)" }],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+          { "@type": "ListItem", position: 3, name: s.title, item: url },
+        ],
+      },
+    ],
+  }
+}
+
 export function llmsTxt(): string {
   const work = PROJECTS.map((p) => `- [${p.title}](${SITE_URL}${p.href}): ${p.description}`).join("\n")
+  const services = SERVICES.map((s) => `- [${s.title}](${SITE_URL}/services/${s.slug}): ${s.description}`).join("\n")
+  const notes = ARTICLES.map((a) => `- [${a.title}](${SITE_URL}/blog/${a.slug}): ${a.description}`).join("\n")
   return `# ${SITE_NAME}
 
 > ${SITE_DESCRIPTION}
 
 ## About
-- [Home, about and contact](${SITE_URL}/): Current role: Associate Software Engineer at MetaUpSpace. B.Tech CSE, KIET Group of Institutions. Open to full-time opportunities.
+- [About Saksham Jain](${SITE_URL}/about): Background, projects, stack and contact.
+- [Home](${SITE_URL}/): Current role: Associate Software Engineer at MetaUpSpace. B.Tech CSE, KIET Group of Institutions. Open to full-time roles and freelance projects.
+
+## Services
+${services}
 
 ## Selected work
 ${work}
 
+## Engineering notes
+${notes}
+
 ## Profiles
+- [LinkedIn](${LINKEDIN_URL})
 - [GitHub](${GITHUB_URL})
 
 ## Contact

@@ -272,7 +272,7 @@ export function Hero({ location, weather }: HeroProps): React.ReactElement {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-75" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-success" />
               </span>
-              Available for full-time opportunities
+              Open to full-time roles & freelance projects
             </motion.p>
 
             {/* Locator follows the availability pill: stacked beneath it on

@@ -235,7 +235,7 @@ export const ABOUT_META = [
   ["CGPA", "8.7 / 10"],
   ["Experience", "2+ years"],
   ["Location", "India"],
-  ["Availability", "Open to full-time opportunities"],
+  ["Availability", "Open to full-time roles and freelance projects"],
 ] as const
 
 // --- Site footer ----------------------------------------------------------
@@ -248,7 +248,9 @@ export const FOOTER_COLUMNS = [
       ["Capabilities", "#capabilities"],
       ["Approach", "#process"],
       ["Stack", "#stack"],
-      ["About", "#about"],
+      ["About", "/about"],
+      ["Services", "/services"],
+      ["Engineering notes", "/blog"],
     ],
   },
   {
@@ -260,7 +262,10 @@ export const FOOTER_COLUMNS = [
   },
   {
     title: "Social",
-    links: [["GitHub ↗", "https://github.com/Sakshamjain98"]],
+    links: [
+      ["LinkedIn ↗", "https://www.linkedin.com/in/sakshamjain007"],
+      ["GitHub ↗", "https://github.com/Sakshamjain98"],
+    ],
   },
 ] as const
 
@@ -274,8 +279,8 @@ export type ProfileStat = {
 export const PROFILE_STATS: readonly ProfileStat[] = [
   { value: "2+", label: "Years experience" },
   { value: "4+", label: "Production products" },
-  { value: "200K+", label: "Users served" },
-  { value: "4,000+", label: "Orders processed daily" },
+  { value: "200K+", label: "Users served · PS Classes" },
+  { value: "4,000+", label: "Orders processed daily · PS Classes" },
   { value: "8.7", label: "CGPA · B.Tech CSE" },
 ]
 
@@ -299,6 +304,10 @@ export const FAQS = [
   },
   {
     q: "Is Saksham Jain available for hire?",
-    a: "Yes. Saksham is open to full-time opportunities, focused on product engineering and AI platforms. The quickest way to reach him is the contact form on this site or by email at sakshamjaindevs@gmail.com. Include the project type and timeline in your message so he can reply with specifics.",
+    a: "Yes. Saksham is open to both full-time roles and freelance projects, focused on product engineering and AI platforms. The quickest way to reach him is the contact form on this site or by email at sakshamjaindevs@gmail.com. Include the project type and timeline so he can reply with specifics.",
+  },
+  {
+    q: "Does Saksham Jain work with clients outside India?",
+    a: "Yes. Saksham works with technology companies, startups and product teams in India and internationally, collaborating remotely. Projects start with a requirements conversation, then architecture, build and deployment, with documentation throughout. Share your project through the contact form and include your time zone so the working hours can be agreed.",
   },
 ] as const
