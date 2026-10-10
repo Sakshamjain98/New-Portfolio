@@ -4,7 +4,7 @@ import Link from "next/link"
 import { JsonLd } from "@/components/json-ld"
 import { SectionShell } from "@/components/section-shell"
 import { ABOUT_META, FAQS, PROJECTS, STACK_PANES } from "@/lib/content"
-import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, PERSON_ID, SITE_URL, WEBSITE_ID } from "@/lib/seo"
+import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, PERSON_ID, SITE_URL, WEBSITE_ID, X_URL } from "@/lib/seo"
 
 const title = "About the developer"
 const description =
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/about" },
-  openGraph: { title, description, url: "/about", siteName: "Saksham Jain", type: "profile", images: [{ url: "/og.png", width: 1665, height: 983, alt: title }] },
+  openGraph: { title, description, url: "/about", siteName: "Saksham Jain", type: "profile", images: [{ url: "/og.png", width: 1200, height: 630, alt: title }] },
 }
 
 export default function About(): React.ReactElement {
@@ -73,6 +73,7 @@ export default function About(): React.ReactElement {
           <ul className="mt-4 space-y-1 text-body">
             <li>Email: <a className="underline underline-offset-2" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
             <li>LinkedIn: <a className="underline underline-offset-2" href={LINKEDIN_URL} rel="me noopener noreferrer">{LINKEDIN_URL.replace("https://www.", "")}</a></li>
+            <li>X: <a className="underline underline-offset-2" href={X_URL} rel="me noopener noreferrer">x.com/codewithSJ</a></li>
             <li>GitHub: <a className="underline underline-offset-2" href={GITHUB_URL} rel="me noopener noreferrer">{GITHUB_URL.replace("https://", "")}</a></li>
             <li><Link className="underline underline-offset-2" href="/#contact">Contact form</Link> · <Link className="underline underline-offset-2" href="/blog">Engineering notes</Link></li>
           </ul>

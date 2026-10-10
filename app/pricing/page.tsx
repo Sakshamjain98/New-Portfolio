@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: { absolute: "Full-Stack Development Pricing and Timelines · Saksham Jain" },
   description,
   alternates: { canonical: "/pricing" },
-  openGraph: { title, description, url: "/pricing", siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1665, height: 983, alt: title }] },
+  openGraph: { title, description, url: "/pricing", siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1200, height: 630, alt: title }] },
 }
 
 export default function Pricing(): React.ReactElement {

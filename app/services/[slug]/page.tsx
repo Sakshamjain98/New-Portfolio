@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: s.seoTitle,
     description: s.description,
     alternates: { canonical: url },
-    openGraph: { title: s.seoTitle, description: s.description, url, siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1665, height: 983, alt: s.seoTitle }] },
+    openGraph: { title: s.seoTitle, description: s.description, url, siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1200, height: 630, alt: s.seoTitle }] },
     twitter: { card: "summary_large_image", title: s.seoTitle, description: s.description, images: ["/og.png"] },
   }
 }

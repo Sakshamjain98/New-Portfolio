@@ -9,7 +9,7 @@
 //      (x-vercel-ip-city / -latitude / -longitude / -timezone / -country).
 //   2. Local dev (no Vercel headers) → a free, no-key IP lookup (ipapi.co),
 //      which geolocates the dev machine's own public IP — i.e. you.
-//   3. Both unavailable → a hard-coded fallback (Bangalore, IN).
+//   3. Both unavailable → a hard-coded fallback (Ghaziabad, IN).
 // ─────────────────────────────────────────────────────────────────────────
 import { headers } from "next/headers"
 
@@ -26,10 +26,10 @@ export type GeoLocation = {
 
 // Tier 3 — used when neither the Vercel headers nor the IP lookup resolve.
 const FALLBACK: GeoLocation = {
-  city: "bangalore",
+  city: "ghaziabad",
   region: "in",
-  latitude: 12.9716,
-  longitude: 77.5946,
+  latitude: 28.6692,
+  longitude: 77.4538,
   timezone: "Asia/Kolkata",
 }
 

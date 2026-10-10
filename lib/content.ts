@@ -234,6 +234,7 @@ export const ABOUT_META = [
   ["Education", "B.Tech CSE · KIET Group of Institutions"],
   ["CGPA", "8.7 / 10"],
   ["Experience", "2+ years"],
+  ["Recognition", "IWOC'25 Winner · Web Captain, GDG on Campus KIET"],
   ["Location", "India"],
   ["Availability", "Open to full-time roles and freelance projects"],
 ] as const
@@ -265,6 +266,7 @@ export const FOOTER_COLUMNS = [
     title: "Social",
     links: [
       ["LinkedIn ↗", "https://www.linkedin.com/in/sakshamjain007"],
+      ["X ↗", "https://x.com/codewithSJ"],
       ["GitHub ↗", "https://github.com/Sakshamjain98"],
     ],
   },
@@ -280,8 +282,8 @@ export type ProfileStat = {
 export const PROFILE_STATS: readonly ProfileStat[] = [
   { value: "2+", label: "Years experience" },
   { value: "4+", label: "Production products" },
-  { value: "200K+", label: "Users served · PS Classes" },
-  { value: "4,000+", label: "Orders processed daily · PS Classes" },
+  { value: "200K+", label: "Total users · PS Classes" },
+  { value: "1,000+", label: "Daily users · PS Classes" },
   { value: "8.7", label: "CGPA · B.Tech CSE" },
 ]
 

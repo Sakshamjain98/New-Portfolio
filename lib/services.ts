@@ -171,7 +171,7 @@ export const SERVICES: readonly Service[] = [
       "Course library, student auth and a free-trial to paid access layer",
     ],
     proof: [
-      { label: "PS Classes", href: "/work/ps-classes", text: "Serves 200K+ users and processes 4,000+ orders a day; designed for 500+ students starting a test series in the same slot, with rank and chapter-wise analytics read from a Redis cache." },
+      { label: "PS Classes", href: "/work/ps-classes", text: "200K+ users overall and 1,000+ daily users; designed for 500+ students starting a test series in the same slot, with rank and chapter-wise analytics read from a Redis cache." },
     ],
     stack: ["Next.js", "Node.js", "MongoDB", "Redis", "RabbitMQ"],
     faqs: [

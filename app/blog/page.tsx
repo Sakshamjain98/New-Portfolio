@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/blog" },
-  openGraph: { title, description, url: "/blog", siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1665, height: 983, alt: title }] },
+  openGraph: { title, description, url: "/blog", siteName: "Saksham Jain", type: "website", images: [{ url: "/og.png", width: 1200, height: 630, alt: title }] },
 }
 
 export default function BlogIndex(): React.ReactElement {

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: a.published,
       modifiedTime: a.updated ?? a.published,
       authors: ["Saksham Jain"],
-      images: [{ url: "/og.png", width: 1665, height: 983, alt: a.title }],
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: a.title }],
     },
     twitter: { card: "summary_large_image", title: a.title, description: a.description, images: ["/og.png"] },
   }
