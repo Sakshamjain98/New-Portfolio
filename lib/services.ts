@@ -15,14 +15,24 @@ export type Service = {
   stack: readonly string[]
   faqs: readonly ServiceFaq[]
   note?: { slug: string; label: string }
+  price: Price
 }
 
 // Indicative ranges set by the owner's delegation, not quotes. Adjust here when
 // real rates change; each page's cost FAQ and schema text derive from these.
-const cost = (what: string, usd: string, inr: string, weeks: string): ServiceFaq => ({
+export type Price = { what: string; usd: string; inr: string; weeks: string }
+const cost = ({ what, usd, inr, weeks }: Price): ServiceFaq => ({
   q: "How much does it cost and how long does it take?",
   a: `Indicative ranges for ${what} are ${usd} (${inr}) over ${weeks} weeks, depending on user roles, workflows, integrations and the deadline. Treat this as a starting point: a fixed quote follows a requirements conversation, before any build starts, so the price reflects real scope.`,
 })
+
+const PRICES: Price[] = [
+  { what: "a custom ERP or warehouse management system", usd: "$2,250 to $9,400", inr: "about ₹1.9 to ₹7.5 lakh", weeks: "8 to 20" },
+  { what: "a SaaS product", usd: "$1,500 to $4,500", inr: "about ₹1.25 to ₹3.75 lakh", weeks: "6 to 12" },
+  { what: "a booking system", usd: "$950 to $3,000", inr: "about ₹75,000 to ₹2.5 lakh", weeks: "4 to 8" },
+  { what: "an e-commerce or ticketing platform", usd: "$1,100 to $3,750", inr: "about ₹95,000 to ₹3.2 lakh", weeks: "5 to 10" },
+  { what: "an online exam platform", usd: "$1,300 to $3,750", inr: "about ₹1.1 to ₹3.2 lakh", weeks: "6 to 10" },
+]
 
 export const SERVICES: readonly Service[] = [
   {
@@ -51,9 +61,10 @@ export const SERVICES: readonly Service[] = [
         q: "What does a custom ERP or warehouse management system include?",
         a: "A custom ERP covers the workflows your operations actually run: inventory or orders, approvals, user roles and permissions, reporting and integrations. Scope starts from your processes, not a template. Modules are built in priority order so the highest-value workflow goes live first and the rest follow in stages.",
       },
-      cost("a custom ERP or warehouse management system", "$6,000 to $25,000", "about ₹5 to ₹20 lakh", "8 to 20"),
+      cost(PRICES[0]),
     ],
     note: { slug: "optimistic-vs-pessimistic-locking", label: "Optimistic or pessimistic locking for bookings and stock" },
+    price: PRICES[0],
   },
   {
     slug: "saas-product-development",
@@ -80,9 +91,10 @@ export const SERVICES: readonly Service[] = [
         q: "Can you build a SaaS product from scratch?",
         a: "Yes. The work starts with requirements and architecture, then covers the database, secure APIs, authentication, billing and the frontend, followed by performance tuning and deployment. You get a production-ready system with documentation, not a demo. Several live products on this site were built this way.",
       },
-      cost("a SaaS product", "$4,000 to $12,000", "about ₹3.5 to ₹10 lakh", "6 to 12"),
+      cost(PRICES[1]),
     ],
     note: { slug: "one-booking-engine-for-clinics-restaurants-salons", label: "One booking engine for clinics, restaurants and salons" },
+    price: PRICES[1],
   },
   {
     slug: "booking-appointment-system-development",
@@ -108,9 +120,10 @@ export const SERVICES: readonly Service[] = [
         q: "How do you prevent double bookings?",
         a: "Each slot carries a version field. If two customers book the same slot within milliseconds, the write that loses the race gets a conflict instead of a silent overwrite, then retries against the current slot state. Slot writes are short and rarely contested, so optimistic locking fits better than holding a lock.",
       },
-      cost("a booking system", "$2,500 to $8,000", "about ₹2 to ₹7 lakh", "4 to 8"),
+      cost(PRICES[2]),
     ],
     note: { slug: "one-booking-engine-for-clinics-restaurants-salons", label: "One booking engine for clinics, restaurants and salons" },
+    price: PRICES[2],
   },
   {
     slug: "ecommerce-ticketing-platform-development",
@@ -137,9 +150,10 @@ export const SERVICES: readonly Service[] = [
         q: "How do you stop overselling during a high-demand drop?",
         a: "Decrement stock inside a short transaction with a pessimistic row lock on the hot item, reserve each unit in Redis with a time-to-live, and make the payment webhook idempotent on order ID. The second buyer waits milliseconds and sees sold out; abandoned checkouts release their stock automatically.",
       },
-      cost("an e-commerce or ticketing platform", "$3,000 to $10,000", "about ₹2.5 to ₹8.5 lakh", "5 to 10"),
+      cost(PRICES[3]),
     ],
     note: { slug: "stop-two-people-buying-the-last-ticket", label: "How to stop two people buying the last ticket" },
+    price: PRICES[3],
   },
   {
     slug: "online-exam-test-series-platform-development",
@@ -165,9 +179,10 @@ export const SERVICES: readonly Service[] = [
         q: "How do you stop students from cheating the exam timer?",
         a: "The server owns the deadline. Each answer is written to a Redis-held session as it is selected, and the server auto-submits the attempt when time is up, whatever the client clock says. Editing the system clock or backgrounding the tab cannot extend an attempt.",
       },
-      cost("an online exam platform", "$3,500 to $10,000", "about ₹3 to ₹8.5 lakh", "6 to 10"),
+      cost(PRICES[4]),
     ],
     note: { slug: "server-authoritative-exam-timer-with-redis", label: "Building a server-authoritative exam timer with Redis" },
+    price: PRICES[4],
   },
 ]
 

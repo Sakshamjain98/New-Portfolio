@@ -62,7 +62,7 @@ export function SiteFooter(): React.ReactElement {
               Saksham Jain
             </Link>
           </span>
-          <span>last updated 07 / 26</span>
+          <span>last updated 10 / 26</span>
         </div>
       </SectionShell>
     </footer>

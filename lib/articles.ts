@@ -29,6 +29,7 @@ export const ARTICLES: readonly Article[] = [
   {
     slug: "stop-two-people-buying-the-last-ticket",
     title: "How do you stop two people buying the last ticket?",
+    seoTitle: "How to Stop Two People Buying the Last Ticket",
     description:
       "Prevent overselling in ticket checkout with a pessimistic row lock, a Redis reservation hold with a TTL, and an idempotent payment webhook.",
     published: "2026-10-10",
@@ -123,6 +124,7 @@ export const ARTICLES: readonly Article[] = [
   {
     slug: "idempotent-payment-and-whatsapp-webhooks",
     title: "How do you make a payment or WhatsApp webhook idempotent?",
+    seoTitle: "How to Make Payment and WhatsApp Webhooks Idempotent",
     description:
       "Key every webhook on a unique ID and publish work to a queue so retries cannot double-issue tickets, bookings or charges. Patterns from two production apps.",
     published: "2026-10-10",
@@ -160,6 +162,7 @@ export const ARTICLES: readonly Article[] = [
   {
     slug: "server-authoritative-exam-timer-with-redis",
     title: "How do you build an exam timer students can't cheat?",
+    seoTitle: "Build a Cheat-Proof Exam Timer with Redis",
     description:
       "Make the server the source of truth for exam deadlines: Redis-held sessions, periodic flush to MongoDB, auto-submit, and a lock against double submits.",
     published: "2026-10-10",

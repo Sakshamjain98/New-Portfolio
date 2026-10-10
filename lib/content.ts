@@ -250,6 +250,7 @@ export const FOOTER_COLUMNS = [
       ["Stack", "#stack"],
       ["About", "/about"],
       ["Services", "/services"],
+      ["Pricing", "/pricing"],
       ["Engineering notes", "/blog"],
     ],
   },

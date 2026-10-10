@@ -171,6 +171,9 @@ export function llmsTxt(): string {
 ## Services
 ${services}
 
+## Pricing
+- [Pricing and timelines](${SITE_URL}/pricing): Indicative ranges per project type; fixed quote after a requirements conversation.
+
 ## Selected work
 ${work}
 

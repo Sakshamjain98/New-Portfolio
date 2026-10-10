@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a) return {}
   const url = `/blog/${a.slug}`
   return {
-    title: a.seoTitle ?? a.title,
+    title: { absolute: a.seoTitle ?? a.title },
     description: a.description,
     alternates: { canonical: url },
     openGraph: {
