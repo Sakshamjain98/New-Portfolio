@@ -33,7 +33,7 @@ export default function Pricing(): React.ReactElement {
         <article className="max-w-[820px]">
           <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.025em]">{title}</h1>
           <p className="mt-6 text-[19px] leading-[1.6] text-ink">
-            Most full-stack projects here run from about $950 for a focused booking system to $9,400 for a large ERP or warehouse platform, over 4 to 20 weeks. These are indicative ranges; a fixed quote follows a requirements conversation, before any build starts.
+            Most full-stack projects here run from about $475 for a focused booking system to $4,700 for a large ERP or warehouse platform, over 4 to 20 weeks. These are indicative ranges; a fixed quote follows a requirements conversation, before any build starts.
           </p>
 
           <div className="mt-10 overflow-x-auto">

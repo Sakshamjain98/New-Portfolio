@@ -27,11 +27,11 @@ const cost = ({ what, usd, inr, weeks }: Price): ServiceFaq => ({
 })
 
 const PRICES: Price[] = [
-  { what: "a custom ERP or warehouse management system", usd: "$2,250 to $9,400", inr: "about ₹1.9 to ₹7.5 lakh", weeks: "8 to 20" },
-  { what: "a SaaS product", usd: "$1,500 to $4,500", inr: "about ₹1.25 to ₹3.75 lakh", weeks: "6 to 12" },
-  { what: "a booking system", usd: "$950 to $3,000", inr: "about ₹75,000 to ₹2.5 lakh", weeks: "4 to 8" },
-  { what: "an e-commerce or ticketing platform", usd: "$1,100 to $3,750", inr: "about ₹95,000 to ₹3.2 lakh", weeks: "5 to 10" },
-  { what: "an online exam platform", usd: "$1,300 to $3,750", inr: "about ₹1.1 to ₹3.2 lakh", weeks: "6 to 10" },
+  { what: "a custom ERP or warehouse management system", usd: "$1,100 to $4,700", inr: "about ₹95,000 to ₹3.75 lakh", weeks: "8 to 20" },
+  { what: "a SaaS product", usd: "$750 to $2,250", inr: "about ₹60,000 to ₹1.9 lakh", weeks: "6 to 12" },
+  { what: "a booking system", usd: "$475 to $1,500", inr: "about ₹40,000 to ₹1.25 lakh", weeks: "4 to 8" },
+  { what: "an e-commerce or ticketing platform", usd: "$550 to $1,900", inr: "about ₹45,000 to ₹1.6 lakh", weeks: "5 to 10" },
+  { what: "an online exam platform", usd: "$650 to $1,900", inr: "about ₹55,000 to ₹1.6 lakh", weeks: "6 to 10" },
 ]
 
 export const SERVICES: readonly Service[] = [
