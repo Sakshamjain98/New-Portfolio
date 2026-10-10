@@ -19,6 +19,7 @@ export const personNode = {
   "@type": "Person",
   "@id": PERSON_ID,
   name: SITE_NAME,
+  alternateName: ["Saksham Jain developer", "Saksham Jain full-stack developer", "Sakshamjain98"],
   url: SITE_URL,
   jobTitle: "Associate Software Engineer",
   description: SITE_DESCRIPTION,

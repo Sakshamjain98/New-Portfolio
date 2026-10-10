@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   title: {
-    default: "Full-Stack Developer for SaaS, ERP & Booking Apps · Saksham Jain",
+    default: "Saksham Jain · Full-Stack Developer for SaaS, ERP & Booking Apps",
     template: "%s · Saksham Jain",
   },
   description: SITE_DESCRIPTION,

@@ -13,7 +13,7 @@ import { homeGraph } from "@/lib/seo"
 import { getLocation } from "@/lib/location"
 import { getWeather } from "@/lib/weather"
 
-const title = "Full-Stack Developer for SaaS, ERP & Booking Apps · Saksham Jain"
+const title = "Saksham Jain · Full-Stack Developer for SaaS, ERP & Booking Apps"
 const description =
   "Full-stack web developer with 2+ years of experience building enterprise SaaS, ERP, and warehouse management systems, from architecture to deployment."
 
