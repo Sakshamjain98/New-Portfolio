@@ -2,21 +2,25 @@ import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
+import { JsonLd } from "@/components/json-ld"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, siteGraph } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 const fontSans = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sakshamjain.codes"),
+  metadataBase: new URL(SITE_URL), // www is the canonical host; the apex 307-redirects to it
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
   title: {
     default: "Saksham Jain · Full-stack Web Developer",
     template: "%s · Saksham Jain",
   },
-  description:
-    "Full-stack web developer with 2+ years of experience building enterprise SaaS, ERP, and warehouse management systems, from architecture to deployment.",
+  description: SITE_DESCRIPTION,
 }
 
 export const viewport: Viewport = {
@@ -42,6 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       )}
     >
       <body>
+        <JsonLd data={siteGraph} />
         <SiteHeader />
         {children}
         <SiteFooter />

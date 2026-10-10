@@ -7,13 +7,21 @@ const project = PROJECTS.find((p) => p.title === "Trexind")!
 
 const title = "Trexind — Case Study"
 const description =
-  "AI operating system for local business, built for clinics, restaurants, and salons. Full-stack work on the restaurant and clinic verticals, the shared booking engine, and WhatsApp automation."
+  "AI operating system for local businesses. Full-stack work on the restaurant and clinic verticals, the shared booking engine, and WhatsApp automation."
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/work/trexind" },
-  openGraph: { title, description, url: "/work/trexind" },
+  openGraph: {
+    title,
+    description,
+    url: "/work/trexind",
+    siteName: "Saksham Jain",
+    type: "article",
+    images: [{ url: project.image, alt: project.imageAlt }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [project.image] },
 }
 
 export default function Trexind(): React.ReactElement {

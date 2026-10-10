@@ -3,8 +3,10 @@ import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import { FlowDiagram, type FlowRow } from "@/components/flow-diagram"
+import { JsonLd } from "@/components/json-ld"
 import { SectionShell } from "@/components/section-shell"
 import type { Project } from "@/lib/content"
+import { projectGraph } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
 export type ComplexityItem = {
@@ -73,6 +75,7 @@ export function CaseStudyPage({
 }: CaseStudyData): React.ReactElement {
   return (
     <main className="pt-28 pb-28 sm:pt-32">
+      <JsonLd data={projectGraph(project)} />
       <SectionShell>
         <Link
           href="/#work"

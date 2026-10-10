@@ -254,7 +254,7 @@ export const FOOTER_COLUMNS = [
   {
     title: "Contact",
     links: [
-      ["sakshamjain.codes", "mailto:sakshamjaindevs@gmail.com"],
+      ["sakshamjaindevs@gmail.com", "mailto:sakshamjaindevs@gmail.com"],
       ["Start a project", "#contact"],
     ],
   },
@@ -280,3 +280,25 @@ export const PROFILE_STATS: readonly ProfileStat[] = [
 ]
 
 export const PROFILE_STATS_ROLE = "Associate Software Engineer"
+
+// --- FAQ ------------------------------------------------------------------
+// components/faq.tsx + FAQPage JSON-LD (lib/seo.ts). Answers are self-contained
+// 40-60 word passages so search and AI engines can quote them directly.
+export const FAQS = [
+  {
+    q: "Who is Saksham Jain?",
+    a: "Saksham Jain is a full-stack web developer in India with 2+ years of experience building enterprise SaaS, ERP, and warehouse management systems. He is an Associate Software Engineer at MetaUpSpace and holds a B.Tech in Computer Science from KIET Group of Institutions, with a CGPA of 8.7 out of 10.",
+  },
+  {
+    q: "What does Saksham Jain build?",
+    a: "He builds production full-stack products: SaaS platforms, ERP and workflow systems, e-commerce storefronts, ticketing and exam-prep platforms. The work covers backend architecture, secure REST APIs, role-based access, automation and the user interface. Selected projects include Trexind, PS Classes, FindYourVibe, Uddeshhya and Skyxis.",
+  },
+  {
+    q: "Which tech stack does Saksham Jain use?",
+    a: "The frontend stack is Next.js, React, TypeScript, Tailwind CSS, Shadcn UI and Radix UI. The backend uses Node.js, Express, MongoDB, Azure Cosmos DB, Firebase and Prisma. Products are deployed on Azure, Vercel, DigitalOcean and Cloudflare, with Docker, Nginx and GitHub in the workflow.",
+  },
+  {
+    q: "Is Saksham Jain available for hire?",
+    a: "Yes. Saksham is open to full-time opportunities, focused on product engineering and AI platforms. The quickest way to reach him is the contact form on this site or by email at sakshamjaindevs@gmail.com. Include the project type and timeline in your message so he can reply with specifics.",
+  },
+] as const

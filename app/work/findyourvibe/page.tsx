@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/work/findyourvibe" },
-  openGraph: { title, description, url: "/work/findyourvibe" },
+  openGraph: {
+    title,
+    description,
+    url: "/work/findyourvibe",
+    siteName: "Saksham Jain",
+    type: "article",
+    images: [{ url: project.image, alt: project.imageAlt }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [project.image] },
 }
 
 export default function FindYourVibe(): React.ReactElement {

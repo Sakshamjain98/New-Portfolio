@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/work/uddeshhya" },
-  openGraph: { title, description, url: "/work/uddeshhya" },
+  openGraph: {
+    title,
+    description,
+    url: "/work/uddeshhya",
+    siteName: "Saksham Jain",
+    type: "article",
+    images: [{ url: project.image, alt: project.imageAlt }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [project.image] },
 }
 
 export default function Uddeshhya(): React.ReactElement {

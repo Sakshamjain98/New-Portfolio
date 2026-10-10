@@ -56,7 +56,7 @@ export function SiteFooter(): React.ReactElement {
           <span>
             © {year} · Designed, developed, and deployed by{" "}
             <Link
-              href="https://sakshamjain.codes"
+              href="/"
               className="text-body transition-colors hover:text-ink"
             >
               Saksham Jain

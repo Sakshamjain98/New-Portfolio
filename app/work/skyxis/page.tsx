@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/work/skyxis" },
-  openGraph: { title, description, url: "/work/skyxis" },
+  openGraph: {
+    title,
+    description,
+    url: "/work/skyxis",
+    siteName: "Saksham Jain",
+    type: "article",
+    images: [{ url: project.image, alt: project.imageAlt }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [project.image] },
 }
 
 export default function Skyxis(): React.ReactElement {

@@ -2,11 +2,14 @@ import type { Metadata } from "next"
 
 import { Approach } from "@/components/approach"
 import { Capabilities } from "@/components/capabilities"
+import { Faq } from "@/components/faq"
+import { JsonLd } from "@/components/json-ld"
 import { Contact } from "@/components/contact"
 import { Hero } from "@/components/hero"
 import { PracticeStrip } from "@/components/practice-strip"
 import { SelectedWork } from "@/components/selected-work"
 import { Stack } from "@/components/stack"
+import { homeGraph } from "@/lib/seo"
 import { getLocation } from "@/lib/location"
 import { getWeather } from "@/lib/weather"
 
@@ -52,6 +55,7 @@ export default async function Page(): Promise<React.ReactElement> {
 
   return (
     <main className="relative">
+      <JsonLd data={homeGraph} />
       <Hero location={location} weather={weather} />
       <PracticeStrip />
       <SelectedWork />
@@ -59,6 +63,7 @@ export default async function Page(): Promise<React.ReactElement> {
       <Approach />
       <Stack />
       <Contact />
+      <Faq />
     </main>
   )
 }
