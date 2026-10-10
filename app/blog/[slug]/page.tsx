@@ -57,7 +57,7 @@ export default async function ArticlePage({ params }: Props): Promise<React.Reac
 
           <p className="mt-8 text-[19px] leading-[1.6] text-ink">{a.answer}</p>
           <p className="mt-4 text-[15px] text-body">
-            From the production case study{" "}
+            {a.project.href.startsWith("/work") ? "From the production case study" : "See also"}{" "}
             <Link href={a.project.href} className="underline underline-offset-2">
               {a.project.title}
             </Link>

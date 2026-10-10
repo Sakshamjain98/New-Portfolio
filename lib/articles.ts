@@ -1,3 +1,5 @@
+import { SERVICES } from "@/lib/services"
+
 /**
  * Engineering notes. Each article answers one question the way a search or AI
  * engine would quote it: a self-contained 40-60 word answer first, then depth.
@@ -222,6 +224,43 @@ export const ARTICLES: readonly Article[] = [
         h: "How do you keep one throttled business from slowing everyone's weekly summary?",
         answer:
           "Run Google Business Profile sync and summary generation as jobs on a RabbitMQ queue with one consumer per business, each with its own backoff. A rate limit on one account then delays only that account's job. Last-synced snapshots and per-business rate-limit counters live in Redis.",
+      },
+    ],
+  },
+  {
+    slug: "cost-to-build-erp-booking-system-india",
+    title: "How much does it cost to build a custom ERP, SaaS or booking system in India?",
+    seoTitle: "Cost to Build an ERP, SaaS or Booking System in India",
+    description:
+      "Indicative price ranges and timelines for custom ERP, SaaS, booking, e-commerce and exam platforms, and the four things that move the quote.",
+    published: "2026-10-10",
+    answer:
+      "Indicative ranges run from about $475 for a focused booking system to $4,700 for a large ERP or warehouse platform, over 4 to 20 weeks. Price depends on user roles, workflows, integrations and the deadline. A fixed quote follows a requirements conversation, before any build starts.",
+    project: { title: "Pricing", href: "/pricing" },
+    table: {
+      head: ["Project", "Indicative range (USD)", "Approx. INR", "Timeline"],
+      rows: SERVICES.map((s) => [s.title, s.price.usd, s.price.inr, `${s.price.weeks} weeks`]),
+    },
+    sections: [
+      {
+        h: "What drives the price of a custom software project?",
+        answer:
+          "Four things move the number most: how many user roles and permissions the system needs, how many workflows and screens it has, how many third-party integrations such as payments or WhatsApp it connects, and the deadline. A clear scope up front keeps the estimate accurate and prevents surprises mid-build.",
+      },
+      {
+        h: "Why does requirements work come before the quote?",
+        answer:
+          "A quote built on guesses is either padded or wrong. Mapping workflows, edge cases and integrations first lets the estimate reflect real scope. It also exposes what can wait for a second phase, so the highest-value workflow goes live first and the rest follow in stages.",
+      },
+      {
+        h: "How long does each type of project take?",
+        answer:
+          "A booking system typically takes 4 to 8 weeks, an e-commerce or ticketing platform 5 to 10, a SaaS product or exam platform 6 to 12, and a large ERP or warehouse system 8 to 20. Timelines assume timely feedback and a stable scope; integrations and approvals are the usual causes of delay.",
+      },
+      {
+        h: "Do you work with clients outside India?",
+        answer:
+          "Yes. Saksham works with technology companies, startups and product teams in India and internationally, remotely. Share your project through the contact form with your time zone and timeline, and you get a scoped estimate after a short requirements conversation.",
       },
     ],
   },
