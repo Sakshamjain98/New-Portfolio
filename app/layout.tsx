@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
+  verification: { other: { "msvalidate.01": "AD9DBFE77ADD8AB080109E054ADAB955" } }, // Bing Webmaster Tools
   title: {
     default: "Saksham Jain · Full-Stack Developer for SaaS, ERP & Booking Apps",
     template: "%s · Saksham Jain",
