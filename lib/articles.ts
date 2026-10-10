@@ -264,6 +264,39 @@ export const ARTICLES: readonly Article[] = [
       },
     ],
   },
+  {
+    slug: "llm-output-handling-bugs",
+    title: "What breaks when you parse LLM output in production?",
+    seoTitle: "LLM Output Parsing Bugs: Fences, Legends, Validators",
+    description:
+      "Three real bugs from an AI backend: JSON wrapped in code fences, prompt legends copied into output, and validators that reject almost-right responses.",
+    published: "2026-10-10",
+    answer:
+      "Usually your code's assumptions about formatting, not the model's answer. Three bugs recur: valid JSON wrapped in markdown fences that a strict parser rejects, prompt token legends copied into the output, and validators that treat repairable formatting as fatal. Validate strictly, normalize narrowly, and keep the raw output.",
+    project: { title: "Engineering notes", href: "/blog" },
+    sections: [
+      {
+        h: "Why does valid JSON from an LLM fail to parse?",
+        answer:
+          "Models often wrap JSON in markdown code fences for readability, so a strict json.loads on the raw text fails even though the content is valid. Strip exactly one outer fence before parsing, keep the original text for audit, and still reject prose or nested fences as genuinely invalid output.",
+      },
+      {
+        h: "Why does the model copy my prompt's token legend into the output?",
+        answer:
+          "If a prompt explains a placeholder with a legend such as a token followed by an equals sign and a description, models sometimes reproduce that format in the result. Tell the model plainly that tokens stand alone on their own line, and strip symbol-prefixed or parenthetical labels when you inject the real content.",
+      },
+      {
+        h: "Which output problems should a validator reject, and which should it repair?",
+        answer:
+          "Reject what makes the output structurally wrong: missing required fields, prose instead of JSON, leftover placeholders. Repair what is cosmetic and safe: a surrounding fence, stray whitespace, a decorative label. Decide per rule, document it, and log what was repaired so you can see drift in model behavior.",
+      },
+      {
+        h: "Why keep the raw model output?",
+        answer:
+          "Raw output lets you tell a model problem from a parsing problem. When a response is rejected or repaired, store the original text next to the result. Debugging then starts from evidence instead of guesses, and you can replay it against a fixed parser without calling the model again.",
+      },
+    ],
+  },
 ]
 
 export const getArticle = (slug: string): Article | undefined => ARTICLES.find((a) => a.slug === slug)
