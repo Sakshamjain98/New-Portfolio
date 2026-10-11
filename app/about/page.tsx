@@ -4,7 +4,7 @@ import Link from "next/link"
 import { JsonLd } from "@/components/json-ld"
 import { SectionShell } from "@/components/section-shell"
 import { ABOUT_META, FAQS, PROJECTS, STACK_PANES } from "@/lib/content"
-import { CONTACT_EMAIL, DISCORD_HANDLE, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, PERSON_ID, SITE_URL, WEBSITE_ID, X_URL } from "@/lib/seo"
+import { CONTACT_EMAIL, DISCORD_HANDLE, DISCORD_URL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, PERSON_ID, SITE_URL, WEBSITE_ID, X_URL } from "@/lib/seo"
 
 const title = "About the developer"
 const description =
@@ -74,7 +74,7 @@ export default function About(): React.ReactElement {
             <li>Email: <a className="underline underline-offset-2" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
             <li>LinkedIn: <a className="underline underline-offset-2" href={LINKEDIN_URL} rel="me noopener noreferrer">{LINKEDIN_URL.replace("https://www.", "")}</a></li>
             <li>X: <a className="underline underline-offset-2" href={X_URL} rel="me noopener noreferrer">x.com/codewithSJ</a></li>
-            <li>Discord: <span className="text-ink">{DISCORD_HANDLE}</span></li>
+            <li>Discord: <a className="underline underline-offset-2" href={DISCORD_URL} rel="me noopener noreferrer">{DISCORD_HANDLE}</a></li>
             <li>Medium: <a className="underline underline-offset-2" href={MEDIUM_URL} rel="me noopener noreferrer">medium.com/@sakshamdevs007</a></li>
             <li>GitHub: <a className="underline underline-offset-2" href={GITHUB_URL} rel="me noopener noreferrer">{GITHUB_URL.replace("https://", "")}</a></li>
             <li><Link className="underline underline-offset-2" href="/#contact">Contact form</Link> · <Link className="underline underline-offset-2" href="/blog">Engineering notes</Link></li>

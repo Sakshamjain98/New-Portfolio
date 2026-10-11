@@ -11,6 +11,7 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/sakshamjain007"
 export const X_URL = "https://x.com/codewithSJ"
 export const MEDIUM_URL = "https://medium.com/@sakshamdevs007"
 export const DISCORD_HANDLE = "buildwithsj"
+export const DISCORD_URL = "https://discord.com/users/1558746767909064730"
 export const CONTACT_EMAIL = "sakshamjaindevs@gmail.com"
 
 export const PERSON_ID = `${SITE_URL}/#person`
@@ -191,7 +192,7 @@ ${notes}
 - [GitHub](${GITHUB_URL})
 - [X](${X_URL})
 - [Medium](${MEDIUM_URL})
-- Discord: ${DISCORD_HANDLE}
+- [Discord (${DISCORD_HANDLE})](${DISCORD_URL})
 
 ## Contact
 - Email: ${CONTACT_EMAIL}
