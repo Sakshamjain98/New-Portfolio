@@ -9,6 +9,7 @@ export const SITE_DESCRIPTION =
 export const GITHUB_URL = "https://github.com/Sakshamjain98"
 export const LINKEDIN_URL = "https://www.linkedin.com/in/sakshamjain007"
 export const X_URL = "https://x.com/codewithSJ"
+export const MEDIUM_URL = "https://medium.com/@sakshamdevs007"
 export const CONTACT_EMAIL = "sakshamjaindevs@gmail.com"
 
 export const PERSON_ID = `${SITE_URL}/#person`
@@ -28,7 +29,7 @@ export const personNode = {
   worksFor: { "@type": "Organization", name: "MetaUpSpace", url: "https://www.metaupspace.com" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "KIET Group of Institutions" },
   knowsAbout: STACK_PANES.flatMap((p) => p.items.map(([name]) => name)),
-  sameAs: [LINKEDIN_URL, GITHUB_URL, X_URL],
+  sameAs: [LINKEDIN_URL, GITHUB_URL, X_URL, MEDIUM_URL],
   award: "IWOC 2025 Winner",
   memberOf: { "@type": "Organization", name: "GDG on Campus KIET" },
 }
@@ -188,6 +189,7 @@ ${notes}
 - [LinkedIn](${LINKEDIN_URL})
 - [GitHub](${GITHUB_URL})
 - [X](${X_URL})
+- [Medium](${MEDIUM_URL})
 
 ## Contact
 - Email: ${CONTACT_EMAIL}

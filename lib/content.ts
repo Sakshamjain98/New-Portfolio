@@ -267,6 +267,7 @@ export const FOOTER_COLUMNS = [
     links: [
       ["LinkedIn ↗", "https://www.linkedin.com/in/sakshamjain007"],
       ["X ↗", "https://x.com/codewithSJ"],
+      ["Medium ↗", "https://medium.com/@sakshamdevs007"],
       ["GitHub ↗", "https://github.com/Sakshamjain98"],
     ],
   },
